@@ -321,6 +321,10 @@ class PrestashopOrder
 
     public function readPaymentType(): PaymentType
     {
+        if (0. >= (float) $this->order->total_paid_tax_incl) {
+            return PaymentType::FreeOrder();
+        }
+
         if (null === $this->orderData) {
             return PaymentType::Card();
         }

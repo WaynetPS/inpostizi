@@ -37,6 +37,15 @@ final class OrdersConfiguration implements OrdersConfigurationInterface
      *
      * @Assert\GreaterThan(0)
      */
+    private $freeOrderStatusId;
+
+    /**
+     * @var int|null
+     *
+     * @Assert\NotNull()
+     *
+     * @Assert\GreaterThan(0)
+     */
     private $paidStatusId;
 
     /**
@@ -99,6 +108,10 @@ final class OrdersConfiguration implements OrdersConfigurationInterface
             return $this->cashOnDeliveryStatusId;
         }
 
+        if (PaymentType::FreeOrder() === $paymentType) {
+            return $this->freeOrderStatusId;
+        }
+
         return $this->defaultInitialStatusId;
     }
 
@@ -122,6 +135,18 @@ final class OrdersConfiguration implements OrdersConfigurationInterface
     public function setCashOnDeliveryStatusId(?\OrderState $codStatus): self
     {
         $this->cashOnDeliveryStatusId = null === $codStatus ? null : (int) $codStatus->id;
+
+        return $this;
+    }
+
+    public function getFreeOrderStatusId(): ?int
+    {
+        return $this->freeOrderStatusId;
+    }
+
+    public function setFreeOrderStatusId(?\OrderState $freeOrderStatus): self
+    {
+        $this->freeOrderStatusId = null === $freeOrderStatus ? null : (int) $freeOrderStatus->id;
 
         return $this;
     }

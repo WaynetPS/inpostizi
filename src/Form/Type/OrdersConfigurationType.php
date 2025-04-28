@@ -40,6 +40,9 @@ final class OrdersConfigurationType extends AbstractType
             ->add('cashOnDeliveryStatusId', OrderStateChoiceType::class, [
                 'label' => $this->translator->l('Initial order status (cash on delivery)', self::TRANSLATION_SOURCE),
             ])
+            ->add('freeOrderStatusId', OrderStateChoiceType::class, [
+                'label' => $this->translator->l('Initial order status (free order)', self::TRANSLATION_SOURCE),
+            ])
             ->add('paidStatusId', OrderStateChoiceType::class, [
                 'label' => $this->translator->l('Paid order status', self::TRANSLATION_SOURCE),
             ])

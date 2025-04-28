@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Common;
 
-use izi\prestashop\Enum\Enum;
 use izi\prestashop\Enum\StringEnum;
 
 /**
@@ -18,6 +17,7 @@ use izi\prestashop\Enum\StringEnum;
  * @method static self ShoppingLimit()
  * @method static self DeferredPayment()
  * @method static self CashOnDelivery()
+ * @method static self FreeOrder()
  */
 final class PaymentType extends StringEnum
 {
@@ -31,6 +31,7 @@ final class PaymentType extends StringEnum
     private const SHOPPING_LIMIT = 'SHOPPING_LIMIT';
     private const DEFERRED_PAYMENT = 'DEFERRED_PAYMENT';
     private const CASH_ON_DELIVERY = 'CASH_ON_DELIVERY';
+    private const FREE_ORDER = 'FREE_ORDER';
 
     /**
      * @deprecated
@@ -53,9 +54,17 @@ final class PaymentType extends StringEnum
     {
         @trigger_error(sprintf('Method "%s()" is deprecated without replacement.', __METHOD__), \E_USER_DEPRECATED);
 
-        $diff = array_udiff(self::cases(), self::getCarrierProvidedPaymentOptions(), [Enum::class, 'compareValues']);
-
-        return array_values($diff);
+        return [
+            self::Card(),
+            self::CardToken(),
+            self::GooglePay(),
+            self::ApplePay(),
+            self::BlikCode(),
+            self::BlikToken(),
+            self::PayByLink(),
+            self::ShoppingLimit(),
+            self::DeferredPayment(),
+        ];
     }
 
     /**
@@ -67,10 +76,16 @@ final class PaymentType extends StringEnum
     {
         @trigger_error(sprintf('Method "%s()" is deprecated without replacement.', __METHOD__), \E_USER_DEPRECATED);
 
-        $filtered = array_filter(self::cases(), static function (self $type) {
-            return $type !== self::DeferredPayment();
-        });
-
-        return array_values($filtered);
+        return [
+            self::Card(),
+            self::CardToken(),
+            self::GooglePay(),
+            self::ApplePay(),
+            self::BlikCode(),
+            self::BlikToken(),
+            self::PayByLink(),
+            self::ShoppingLimit(),
+            self::CashOnDelivery(),
+        ];
     }
 }

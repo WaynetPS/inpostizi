@@ -463,7 +463,8 @@ abstract class AbstractBasketBuilder implements BasketBuilderInterface
             $promoPrice,
             $this->expirationDate,
             $this->additionalInformation,
-            $this->notice
+            $this->notice,
+            [] !== $products && 0. >= $finalPrice->getGross()
         );
     }
 
@@ -495,7 +496,7 @@ abstract class AbstractBasketBuilder implements BasketBuilderInterface
 
     private function getFinalPrice(): Price
     {
-        // between PS 1.7.4 and 1.7.6 \Cart::BOTH_WITHOUT_SHIPPING calculation type does not take cart rules into the account
+        // between PS 1.7.4 and 1.7.6 the \Cart::BOTH_WITHOUT_SHIPPING calculation type does not take cart rules into account
         if (\Tools::version_compare(_PS_VERSION_, '1.7.4', '>=') && \Tools::version_compare(_PS_VERSION_, '1.7.6')) {
             return $this->getCartTotalWithoutShipping();
         }

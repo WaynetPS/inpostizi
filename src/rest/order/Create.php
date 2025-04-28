@@ -687,8 +687,17 @@ class Create
         $epsilon = $details->getCurrency()->getSmallestUnitAmount() / 2.;
 
         if (abs($orderTotal - $basketPrice) >= $epsilon) {
-            throw new CannotCreateOrderException($this->module->l('Basket price has changed. Please review your order.', self::TRANSLATION_SOURCE));
+            throw new CannotCreateOrderException($this->module->l('Basket price has changed. Please review your order..', self::TRANSLATION_SOURCE));
         }
+
+        $isFreeBasket = 0. >= $orderTotal;
+        $isFreeOrderPayment = PaymentType::FreeOrder() === $details->getPaymentType();
+
+        if ($isFreeBasket === $isFreeOrderPayment) {
+            return;
+        }
+
+        throw new CannotCreateOrderException($this->module->l('The selected payment method is not valid.', self::TRANSLATION_SOURCE));
     }
 
     private function getMinimalPurchaseAmount(): float
@@ -761,6 +770,11 @@ class Create
 
     private function checkPaymentType(PaymentType $paymentType, int $shopId): void
     {
+        if (PaymentType::FreeOrder() === $paymentType) {
+            // free order payment is always available, cart total will be validated after updating cart data
+            return;
+        }
+
         $availablePaymentOptions = $this->ordersConfiguration->getAvailablePaymentOptions($shopId);
 
         if ([] === $availablePaymentOptions) {

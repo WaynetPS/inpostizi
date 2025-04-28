@@ -94,6 +94,7 @@ $_MODULE['<{inpostizi}prestashop>objectmodelautocompletetype_e576c23d915755d83e2
 $_MODULE['<{inpostizi}prestashop>objectmodelautocompletetype_2397bd5fd0c284abbd5d2ca6aba59d78'] = 'Brak większej ilości wyników';
 $_MODULE['<{inpostizi}prestashop>ordersconfigurationtype_fd282be0a539046c5c22736ef41f4350'] = 'Status zamówienia utworzonego przez InPost Pay';
 $_MODULE['<{inpostizi}prestashop>ordersconfigurationtype_32e0295e9c28454d52b4f4f3643b46e7'] = 'Status zamówienia utworzonego przez InPost Pay (płatność za pobraniem)';
+$_MODULE['<{inpostizi}prestashop>ordersconfigurationtype_79b400e9e21716e78828777955cab075'] = 'Status zamówienia utworzonego przez InPost Pay (darmowe zamówienie)';
 $_MODULE['<{inpostizi}prestashop>ordersconfigurationtype_05a5fcc9d88a553b80b2633aa4556d58'] = 'Status dla zamówienia opłaconego przez InPost Pay';
 $_MODULE['<{inpostizi}prestashop>ordersconfigurationtype_33af8066d3c83110d4bd897f687cedd2'] = 'Statusy zamówień';
 $_MODULE['<{inpostizi}prestashop>ordersconfigurationtype_8cd8b0f7c9d02973566d70ae96bcf976'] = 'Włącz wszystkie dostępne metody płatności';
@@ -243,6 +244,8 @@ $_MODULE['<{inpostizi}prestashop>create_5da7b3dc1a91973a4cf0f9fd3201ce0a'] = 'Ad
 $_MODULE['<{inpostizi}prestashop>create_a7bf47f259b0e675d565b57d5bead1b4'] = 'Dane klienta nie są poprawne: %s';
 $_MODULE['<{inpostizi}prestashop>create_f609bb09ff74c0ba85a8ad6491985fec'] = 'Uwagi do zamówienia nie są poprawne.';
 $_MODULE['<{inpostizi}prestashop>create_aa5c35a3fda1aae28e338de76d2849f4'] = 'Nie możesz złożyć zamówienia, produkt nie jest dostępny w tej ilości: %s';
+$_MODULE['<{inpostizi}prestashop>create_fd89b4bdaed19b79c3b6124e6a5b6edf'] = 'Niezgodność ceny koszyka.';
+$_MODULE['<{inpostizi}prestashop>create_0e7dd1e39f945963bf77aecbd6dbf272'] = 'Wybrana metoda płatności nie jest poprawna.';
 $_MODULE['<{inpostizi}prestashop>create_cda059f021a57b6dbc4304efa95b40ab'] = 'Kupon rabatowy %s nie jest już dostępny: %s';
 $_MODULE['<{inpostizi}prestashop>create_6e0a1f3186d8fc17ec4cfb51ce31153b'] = 'Cena koszyka uległa zmianie. Zweryfikuj swoje zamówienie.';
 $_MODULE['<{inpostizi}prestashop>create_17ffb24862c7db18f577ee8328688a9d'] = 'Wybrana metoda płatności nie jest dostępna.';

@@ -18,6 +18,7 @@ final class OrdersConfiguration implements OrdersConfigurationInterface, Persist
 
     private const INITIAL_OS_ID = 'INPOST_PAY_INITIAL_OS_ID';
     private const COD_OS_ID = 'INPOST_PAY_COD_OS_ID';
+    private const FREE_ORDER_OS_ID = 'INPOST_PAY_FREE_ORDER_OS_ID';
     private const PAID_OS_ID = 'INPOST_PAY_authorized_payment';
     private const STATUS_DESCRIPTION_MAP = 'INPOST_PAY_OS_DESCRIPTION_MAP';
     private const ENABLE_ALL_PAYMENT_OPTIONS = 'INPOST_PAY_ENABLE_ALL_PAYMENT_OPTIONS';
@@ -49,6 +50,10 @@ final class OrdersConfiguration implements OrdersConfigurationInterface, Persist
     {
         if (PaymentType::CashOnDelivery() === $paymentType && null !== $codStatusId = $this->getCashOnDeliveryStatusId($shopId)) {
             return $codStatusId;
+        }
+
+        if (PaymentType::FreeOrder() === $paymentType && null !== $freeOrderStatusId = $this->getFreeOrderStatusId($shopId)) {
+            return $freeOrderStatusId;
         }
 
         return (int) $this->getDefaultInitialStatusId($shopId);
@@ -109,6 +114,7 @@ final class OrdersConfiguration implements OrdersConfigurationInterface, Persist
 
         return $configuration
             ->setCashOnDeliveryStatusId($this->getCashOnDeliveryStatus())
+            ->setFreeOrderStatusId($this->getFreeOrderStatus())
             ->setMessageOptions($this->getMessageOptions())
             ->setAllPaymentOptionsEnabled($this->isAllPaymentOptionsEnabled());
     }
@@ -117,9 +123,11 @@ final class OrdersConfiguration implements OrdersConfigurationInterface, Persist
     {
         $defaultInitialStatusId = $configuration->getInitialStatusId();
         $codStatusId = $configuration->getInitialStatusId(PaymentType::CashOnDelivery());
+        $freeOrderStatusId = $configuration->getInitialStatusId(PaymentType::FreeOrder());
 
         $this->configuration->set(self::INITIAL_OS_ID, $defaultInitialStatusId);
         $this->configuration->set(self::COD_OS_ID, $codStatusId);
+        $this->configuration->set(self::FREE_ORDER_OS_ID, $freeOrderStatusId);
         $this->configuration->set(self::PAID_OS_ID, $configuration->getPaidStatusId());
         $this->configuration->set(self::POS_ID, $configuration->getPointOfSaleId());
         $this->setOrderStatusDescriptionMapping($configuration->getStatusDescriptionMap());
@@ -270,12 +278,33 @@ final class OrdersConfiguration implements OrdersConfigurationInterface, Persist
         return null === $value ? null : (int) $value;
     }
 
+    private function getFreeOrderStatusId(?int $shopId = null): ?int
+    {
+        $value = $this->configuration->get(self::FREE_ORDER_OS_ID, $shopId);
+
+        return null === $value ? null : (int) $value;
+    }
+
     private function getCashOnDeliveryStatus(): ?\OrderState
     {
         if (null === $statusId = $this->getCashOnDeliveryStatusId()) {
             return null;
         }
 
+        return $this->createOrderStatus($statusId);
+    }
+
+    private function getFreeOrderStatus(): ?\OrderState
+    {
+        if (null === $statusId = $this->getFreeOrderStatusId()) {
+            return null;
+        }
+
+        return $this->createOrderStatus($statusId);
+    }
+
+    private function createOrderStatus(int $statusId): \OrderState
+    {
         $status = new \OrderState();
         $status->id = $statusId;
 
