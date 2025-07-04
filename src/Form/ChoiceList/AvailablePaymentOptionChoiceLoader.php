@@ -56,13 +56,13 @@ final class AvailablePaymentOptionChoiceLoader implements ChoiceLoaderInterface
         $this->client = $client;
 
         if (null === $this->client) {
-            return $this->choices = PaymentType::cases();
+            return $this->choices = PaymentType::getSelectablePaymentOptions();
         }
 
         try {
             $availableOptions = $this->client->getAvailablePaymentOptions();
         } catch (\Exception $e) {
-            return $this->choices = PaymentType::cases();
+            return $this->choices = PaymentType::getSelectablePaymentOptions();
         }
 
         $choices = $availableOptions->getPaymentTypes();

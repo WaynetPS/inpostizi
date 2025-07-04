@@ -34,6 +34,16 @@ final class PaymentType extends StringEnum
     private const FREE_ORDER = 'FREE_ORDER';
 
     /**
+     * @return self[]
+     */
+    public static function getSelectablePaymentOptions(): array
+    {
+        return array_filter(self::cases(), static function (self $paymentType): bool {
+            return self::FreeOrder() !== $paymentType;
+        });
+    }
+
+    /**
      * @deprecated
      *
      * @return self[]
