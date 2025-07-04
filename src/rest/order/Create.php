@@ -687,7 +687,7 @@ class Create
         $epsilon = $details->getCurrency()->getSmallestUnitAmount() / 2.;
 
         if (abs($orderTotal - $basketPrice) >= $epsilon) {
-            throw new CannotCreateOrderException($this->module->l('Basket price has changed. Please review your order..', self::TRANSLATION_SOURCE));
+            throw new CannotCreateOrderException($this->module->l('Basket price has changed. Please review your order.', self::TRANSLATION_SOURCE));
         }
 
         $isFreeBasket = 0. >= $orderTotal;
