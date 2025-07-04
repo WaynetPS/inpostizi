@@ -244,7 +244,6 @@ $_MODULE['<{inpostizi}prestashop>create_5da7b3dc1a91973a4cf0f9fd3201ce0a'] = 'Ad
 $_MODULE['<{inpostizi}prestashop>create_a7bf47f259b0e675d565b57d5bead1b4'] = 'Dane klienta nie są poprawne: %s';
 $_MODULE['<{inpostizi}prestashop>create_f609bb09ff74c0ba85a8ad6491985fec'] = 'Uwagi do zamówienia nie są poprawne.';
 $_MODULE['<{inpostizi}prestashop>create_aa5c35a3fda1aae28e338de76d2849f4'] = 'Nie możesz złożyć zamówienia, produkt nie jest dostępny w tej ilości: %s';
-$_MODULE['<{inpostizi}prestashop>create_fd89b4bdaed19b79c3b6124e6a5b6edf'] = 'Niezgodność ceny koszyka.';
 $_MODULE['<{inpostizi}prestashop>create_0e7dd1e39f945963bf77aecbd6dbf272'] = 'Wybrana metoda płatności nie jest poprawna.';
 $_MODULE['<{inpostizi}prestashop>create_cda059f021a57b6dbc4304efa95b40ab'] = 'Kupon rabatowy %s nie jest już dostępny: %s';
 $_MODULE['<{inpostizi}prestashop>create_6e0a1f3186d8fc17ec4cfb51ce31153b'] = 'Cena koszyka uległa zmianie. Zweryfikuj swoje zamówienie.';
