@@ -18,6 +18,9 @@ use izi\prestashop\Entities\BasketSessionInterface;
 use izi\prestashop\Event\EventDispatcherInterface;
 use izi\prestashop\Event\ValidateOrderEvent;
 use izi\prestashop\MerchantApi\Command\Order\UpdateCartMessageCommand;
+use izi\prestashop\MerchantApi\Event\CreateOrderExceptionEvent;
+use izi\prestashop\MerchantApi\Event\CreateOrderRequestEvent;
+use izi\prestashop\MerchantApi\Event\OrderCreatedEvent;
 use izi\prestashop\MerchantApi\Exception\BasketNotFoundException;
 use izi\prestashop\MerchantApi\Exception\CannotCreateOrderException;
 use izi\prestashop\MerchantApi\Exception\InternalServerErrorException;
@@ -128,7 +131,16 @@ class Create
             return $orderId;
         }
 
-        return $this->createOrder($session, $request);
+        try {
+            $orderId = $this->createOrder($session, $request);
+            $this->eventDispatcher->dispatch(new OrderCreatedEvent($session, $request, $orderId));
+
+            return $orderId;
+        } catch (\Throwable $e) {
+            $this->eventDispatcher->dispatch(new CreateOrderExceptionEvent($session, $request, $e));
+
+            throw $e;
+        }
     }
 
     /**
@@ -224,10 +236,11 @@ class Create
         $this->updateCartMessage($cart, $request);
         $this->processOptionalServices($cart, $deliveryType, $serviceCodes);
 
+        $this->eventDispatcher->dispatch(new CreateOrderRequestEvent($session, $request));
+
         $this->validateCart($cart, $request);
 
         $orderId = null;
-
         $this->eventDispatcher->addListener(ValidateOrderEvent::class, $listener = function (ValidateOrderEvent $event) use ($session, $request, $cart, &$orderId) {
             if ($event->getOrder()->module !== $this->module->name) {
                 return;
@@ -687,14 +700,26 @@ class Create
     private function checkCartTotal(\Cart $cart, CreateOrderRequest $request): void
     {
         $details = $request->getOrderDetails();
-
         $orderTotal = $cart->getOrderTotal();
         $basketPrice = $details->getBasketPrice()->getGross();
+        foreach ($details->getInpostDiscounts() as $discount) {
+            $basketPrice -= $discount->getDiscount();
+        }
+
         $epsilon = $details->getCurrency()->getSmallestUnitAmount() / 2.;
 
-        if (abs($orderTotal - $basketPrice) >= $epsilon) {
-            throw new CannotCreateOrderException($this->module->l('Basket price has changed. Please review your order.', self::TRANSLATION_SOURCE));
+        if (abs($orderTotal - $basketPrice) < $epsilon) {
+            return;
         }
+
+        $this->module->getLogger()->notice('Basket price mismatch for cart #{cartId}.', [
+            'cartId' => $cart->id,
+            'actual' => $orderTotal,
+            'expected' => $basketPrice,
+            'discounts' => $details->getInpostDiscounts(),
+        ]);
+
+        throw new CannotCreateOrderException($this->module->l('Basket price has changed. Please review your order.', self::TRANSLATION_SOURCE));
     }
 
     private function getMinimalPurchaseAmount(): float
