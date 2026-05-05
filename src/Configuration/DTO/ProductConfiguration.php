@@ -8,6 +8,10 @@ use izi\prestashop\Configuration\ProductConfigurationInterface;
 use izi\prestashop\Product\Image\ImageGalleryType;
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ProductConfiguration implements ProductConfigurationInterface
 {
     /**

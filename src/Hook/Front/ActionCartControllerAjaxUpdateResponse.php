@@ -9,6 +9,10 @@ use izi\prestashop\Event\EventDispatcherInterface;
 use izi\prestashop\Hook\HookInterface;
 use Symfony\Component\HttpFoundation\Request;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ActionCartControllerAjaxUpdateResponse implements HookInterface
 {
     public const HOOK_NAME = 'actionAjaxDieCartControllerDisplayAjaxUpdateBefore';

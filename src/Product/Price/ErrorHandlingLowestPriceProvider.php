@@ -8,6 +8,10 @@ use izi\prestashop\Common\Price;
 use Psr\Log\LoggerInterface;
 use Symfony\Contracts\Service\ResetInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ErrorHandlingLowestPriceProvider implements BatchLowestPriceProviderInterface
 {
     /**

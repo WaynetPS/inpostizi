@@ -8,6 +8,10 @@ use izi\prestashop\Common\Currency;
 use izi\prestashop\Common\PaymentType;
 use izi\prestashop\Common\Price;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class OrderDetails implements \JsonSerializable
 {
     /**

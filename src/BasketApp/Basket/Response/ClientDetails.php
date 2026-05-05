@@ -6,6 +6,10 @@ namespace izi\prestashop\BasketApp\Basket\Response;
 
 use izi\prestashop\Common\PhoneNumber;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ClientDetails implements \JsonSerializable
 {
     /**

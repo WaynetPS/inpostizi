@@ -6,6 +6,10 @@ use izi\prestashop\Event\CreateShipmentRequestProcessedEvent;
 use izi\prestashop\Event\EventDispatcherInterface;
 use izi\prestashop\Hook\HookInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ActionAdminInPostConfirmedShipmentsControllerAfter implements HookInterface
 {
     public const HOOK_NAME = 'actionAdminInPostConfirmedShipmentsControllerAfter';

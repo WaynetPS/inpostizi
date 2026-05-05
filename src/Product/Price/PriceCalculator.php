@@ -11,6 +11,10 @@ use izi\prestashop\Configuration\PrestaShopConfiguration;
 use izi\prestashop\ObjectModel\Repository\CurrencyRepository;
 use izi\prestashop\ObjectModel\Repository\ObjectRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class PriceCalculator implements PriceCalculatorInterface
 {
     /**

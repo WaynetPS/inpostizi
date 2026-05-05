@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Environment;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UatEnvironment implements EnvironmentInterface
 {
     public function getType(): EnvironmentType

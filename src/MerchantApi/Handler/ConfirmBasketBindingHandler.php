@@ -12,6 +12,10 @@ use izi\prestashop\MerchantApi\Exception\OrderExistsException;
 use izi\prestashop\MerchantApi\Model\Basket\Response\Basket;
 use izi\prestashop\Repository\BasketSessionRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ConfirmBasketBindingHandler implements ConfirmBasketBindingHandlerInterface
 {
     /**

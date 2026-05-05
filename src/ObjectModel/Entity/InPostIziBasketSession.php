@@ -5,6 +5,10 @@ namespace izi\prestashop\ObjectModel\Entity;
 use izi\prestashop\MerchantApi\Model\Basket\Request\BindingConfirmation;
 use izi\prestashop\MerchantApi\Model\Order\Request\CreateOrderRequest;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class InPostIziBasketSession extends \ObjectModel
 {
     public const TABLE_NAME = 'inpostizi_basket_session';

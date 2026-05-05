@@ -9,6 +9,10 @@ use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class NotBlankInDefaultLanguageValidator extends ConstraintValidator
 {
     private const DEFAULT_LANGUAGE_ID_CONFIG_KEY = 'PS_LANG_DEFAULT';

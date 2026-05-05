@@ -6,6 +6,10 @@ namespace izi\prestashop\Validator;
 
 use Symfony\Component\Validator\Constraint;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @Annotation
  * @Target({"CLASS", "PROPERTY", "ANNOTATION"})

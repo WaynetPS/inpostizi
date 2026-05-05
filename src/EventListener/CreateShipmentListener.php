@@ -8,6 +8,10 @@ use izi\prestashop\Repository\OrderDataRepositoryInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CreateShipmentListener implements EventSubscriberInterface
 {
     /**

@@ -18,6 +18,10 @@ use Symfony\Component\Form\ReversedTransformer;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * Inspired by {@see \Symfony\Bridge\Doctrine\Form\Type\EntityType}.
  */

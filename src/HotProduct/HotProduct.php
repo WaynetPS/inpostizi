@@ -7,6 +7,10 @@ namespace izi\prestashop\HotProduct;
 use izi\prestashop\HotProduct\Exception\InvalidProductDataException;
 use izi\prestashop\Product\ReferenceId;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class HotProduct
 {
     /**

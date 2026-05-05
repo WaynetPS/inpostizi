@@ -6,6 +6,10 @@ namespace izi\prestashop\OAuth2\Exception;
 
 use Psr\Http\Message\ResponseInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class AccessTokenRequestException extends \RuntimeException implements OAuth2ExceptionInterface
 {
     /**

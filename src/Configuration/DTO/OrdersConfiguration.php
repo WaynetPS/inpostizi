@@ -9,6 +9,10 @@ use izi\prestashop\Configuration\DTO\Order\MessageOptions;
 use izi\prestashop\Configuration\OrdersConfigurationInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class OrdersConfiguration implements OrdersConfigurationInterface
 {
     /**

@@ -19,6 +19,10 @@ use izi\prestashop\ObjectModel\Repository\ProductRepository;
 use izi\prestashop\Product\ReferenceId;
 use Psr\SimpleCache\CacheInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class GetProductsHandler implements GetProductsHandlerInterface
 {
     use CommandHandlerTrait;

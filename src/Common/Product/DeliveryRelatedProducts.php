@@ -6,6 +6,10 @@ namespace izi\prestashop\Common\Product;
 
 use izi\prestashop\Common\Delivery\DeliveryType;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class DeliveryRelatedProducts implements \JsonSerializable
 {
     /**

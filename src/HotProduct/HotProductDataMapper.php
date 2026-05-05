@@ -18,6 +18,10 @@ use izi\prestashop\Product\Price\PriceCalculatorInterface;
 use izi\prestashop\Product\Price\PriceQuery;
 use izi\prestashop\Product\Util\DescriptionFormatter;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class HotProductDataMapper implements HotProductDataMapperInterface
 {
     /**

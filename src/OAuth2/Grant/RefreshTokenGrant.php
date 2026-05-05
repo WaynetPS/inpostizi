@@ -6,6 +6,10 @@ namespace izi\prestashop\OAuth2\Grant;
 
 use izi\prestashop\OAuth2\Authentication\ClientCredentialsInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @internal
  */

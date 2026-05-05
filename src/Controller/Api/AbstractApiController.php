@@ -14,6 +14,10 @@ use Symfony\Component\Serializer\Exception\MissingConstructorArgumentsException;
 use Symfony\Component\Serializer\Exception\UnexpectedValueException;
 use Symfony\Component\Serializer\SerializerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 abstract class AbstractApiController
 {
     /**

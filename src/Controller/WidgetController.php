@@ -26,6 +26,10 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class WidgetController implements ServiceSubscriberInterface
 {
     /**

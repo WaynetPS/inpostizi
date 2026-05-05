@@ -7,6 +7,10 @@ namespace izi\prestashop\MerchantApi\Command;
 use izi\prestashop\MerchantApi\Handler\GetProductsHandler;
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @see GetProductsHandler
  */

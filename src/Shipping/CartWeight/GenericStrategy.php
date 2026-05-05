@@ -6,6 +6,10 @@ namespace izi\prestashop\Shipping\CartWeight;
 
 use izi\prestashop\Common\Weight;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class GenericStrategy implements CartWeightDeliveryStrategyInterface
 {
     public function isShippingAvailableBasedOnTotalWeight(\Carrier $carrier, Weight $cartWeight): bool

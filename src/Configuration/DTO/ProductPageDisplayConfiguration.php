@@ -10,6 +10,10 @@ use izi\prestashop\Configuration\WidgetDisplayConfigurationInterface;
 use izi\prestashop\View\Widget\WidgetConfigurationInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ProductPageDisplayConfiguration implements WidgetDisplayConfigurationInterface, ProductRestrictionsProviderInterface
 {
     /**

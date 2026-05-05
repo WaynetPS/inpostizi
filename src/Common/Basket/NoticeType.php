@@ -6,6 +6,10 @@ namespace izi\prestashop\Common\Basket;
 
 use izi\prestashop\Enum\StringEnum;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @method static self Error()
  * @method static self Attention()

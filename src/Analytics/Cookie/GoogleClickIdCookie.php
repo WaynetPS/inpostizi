@@ -8,6 +8,10 @@ use izi\prestashop\Analytics\Cookie\Factory\CookieFactoryInterface;
 use izi\prestashop\Analytics\Cookie\Repository\CookieRepositoryInterface;
 use izi\prestashop\Analytics\Parameters;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class GoogleClickIdCookie extends GenericClickIdExtractor
 {
     public function __construct(CookieFactoryInterface $cookieFactory, CookieRepositoryInterface $cookieRepository, array $options = [])

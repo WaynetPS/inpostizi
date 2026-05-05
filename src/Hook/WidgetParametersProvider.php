@@ -15,6 +15,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class WidgetParametersProvider implements WidgetParametersProviderInterface
 {
     /**

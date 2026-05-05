@@ -10,6 +10,10 @@ use izi\prestashop\Configuration\ShippingConfiguration;
 use izi\prestashop\Configuration\ShippingConfigurationInterface;
 use izi\prestashop\Handler\CommandHandlerTrait;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UpdateShippingConfigurationHandler implements UpdateShippingConfigurationHandlerInterface
 {
     use CommandHandlerTrait;

@@ -9,6 +9,10 @@ use Symfony\Component\Form\ChoiceList\ArrayChoiceList;
 use Symfony\Component\Form\ChoiceList\ChoiceListInterface;
 use Symfony\Component\Form\ChoiceList\Loader\ChoiceLoaderInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CarrierChoiceLoader implements ChoiceLoaderInterface
 {
     /**

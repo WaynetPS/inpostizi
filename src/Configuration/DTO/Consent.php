@@ -14,6 +14,10 @@ use Symfony\Component\Serializer\Normalizer\DenormalizableInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @UniqueIdentifiers(groups = {Consent::VALIDATION_GROUP})
  *

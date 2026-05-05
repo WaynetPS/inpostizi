@@ -16,6 +16,10 @@ use izi\prestashop\Product\ReferenceId;
 use Psr\Log\LoggerInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ProductsQuantityEventHandler implements BasketEventHandlerInterface
 {
     /**

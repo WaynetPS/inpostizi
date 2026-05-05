@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Entities;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @template T of object
  */

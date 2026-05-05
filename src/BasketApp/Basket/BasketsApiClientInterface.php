@@ -12,6 +12,10 @@ use izi\prestashop\BasketApp\Exception\BasketExpiredException;
 use izi\prestashop\BasketApp\Exception\BasketNotBoundException;
 use izi\prestashop\BasketApp\Exception\BasketNotFoundException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface BasketsApiClientInterface
 {
     /**

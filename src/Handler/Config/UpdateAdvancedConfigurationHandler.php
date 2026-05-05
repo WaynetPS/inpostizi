@@ -10,6 +10,10 @@ use izi\prestashop\Configuration\AdvancedConfigurationInterface;
 use izi\prestashop\Configuration\PersistentConfigurationInterface;
 use izi\prestashop\Handler\CommandHandlerTrait;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UpdateAdvancedConfigurationHandler implements UpdateAdvancedConfigurationHandlerInterface
 {
     use CommandHandlerTrait;

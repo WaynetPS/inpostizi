@@ -24,6 +24,10 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class InpostIziBackendModuleFrontController extends ModuleFrontController
 {
     private const MERCHANT_ROUTES = [

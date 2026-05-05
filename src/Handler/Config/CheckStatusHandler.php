@@ -8,6 +8,10 @@ use izi\prestashop\Command\Config\CheckStatusCommand;
 use izi\prestashop\Handler\CommandHandlerTrait;
 use izi\prestashop\Handler\Config\Status\StatusCheckerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CheckStatusHandler implements CheckStatusHandlerInterface
 {
     use CommandHandlerTrait;

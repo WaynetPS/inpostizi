@@ -6,6 +6,10 @@ namespace InPost\Izi\Upgrade;
 
 use izi\prestashop\Translation\MessageHandler\ImportTranslationsHandler;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @internal
  */

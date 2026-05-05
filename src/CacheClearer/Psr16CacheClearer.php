@@ -6,6 +6,10 @@ namespace izi\prestashop\CacheClearer;
 
 use Psr\SimpleCache\CacheInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Psr16CacheClearer implements CacheClearerInterface
 {
     /**

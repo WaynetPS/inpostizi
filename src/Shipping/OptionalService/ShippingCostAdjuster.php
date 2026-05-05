@@ -11,6 +11,10 @@ use izi\prestashop\Configuration\ShippingConfigurationInterface;
 use izi\prestashop\Event\ValidateOrderEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class ShippingCostAdjuster implements EventSubscriberInterface
 {
     /**

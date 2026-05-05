@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Configuration\DTO\Shipping;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class TimeOfWeekRange implements \JsonSerializable
 {
     /**

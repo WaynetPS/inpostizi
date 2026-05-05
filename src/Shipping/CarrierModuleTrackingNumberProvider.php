@@ -7,6 +7,10 @@ namespace izi\prestashop\Shipping;
 use izi\prestashop\ObjectModel\ObjectManagerInterface;
 use izi\prestashop\ObjectModel\Repository\ShipmentRepository;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CarrierModuleTrackingNumberProvider implements TrackingNumberProviderInterface
 {
     /**

@@ -9,6 +9,10 @@ use izi\prestashop\BasketApp\Signature\Response\SigningKeys;
 use izi\prestashop\BasketApp\Signature\SigningKeysApiClientInterface;
 use Psr\SimpleCache\CacheInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class SigningKeysService implements SigningKeysServiceInterface
 {
     private const CACHE_KEY = 'SIGNING_KEYS';

@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\View\Asset\Provider\DTO;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class Assets
 {
     /**

@@ -17,6 +17,10 @@ use izi\prestashop\Configuration\ProductConfiguration;
 use izi\prestashop\Configuration\ProductConfigurationInterface;
 use izi\prestashop\Handler\CommandHandlerTrait;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UpdateGeneralConfigurationHandler implements UpdateGeneralConfigurationHandlerInterface
 {
     use CommandHandlerTrait;

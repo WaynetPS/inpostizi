@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\ProductOptions;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface ProductOptionsRepositoryInterface
 {
     public function add(ProductOptions $options): void;

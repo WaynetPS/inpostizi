@@ -6,6 +6,10 @@ namespace izi\prestashop\MerchantApi\Command;
 
 use izi\prestashop\MerchantApi\Model\Basket\Request\BasketEvent;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UpdateBasketCommand
 {
     /**

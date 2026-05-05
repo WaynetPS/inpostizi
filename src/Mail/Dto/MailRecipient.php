@@ -2,6 +2,10 @@
 
 namespace izi\prestashop\Mail\Dto;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class MailRecipient
 {
     /**

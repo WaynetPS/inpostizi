@@ -6,6 +6,10 @@ namespace izi\prestashop\Installer;
 
 use izi\prestashop\Installer\Exception\CoreInstallationException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CoreInstaller implements InstallerInterface, UninstallerInterface
 {
     public function install(\Module $module): void

@@ -11,6 +11,10 @@ use izi\prestashop\Configuration\ApiConfigurationInterface;
 use izi\prestashop\Form\Event\ApiConfigurationValidatedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class BasketAppClientProvider implements EventSubscriberInterface
 {
     /**

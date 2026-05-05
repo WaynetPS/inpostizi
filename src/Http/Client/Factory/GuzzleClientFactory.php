@@ -8,6 +8,10 @@ use GuzzleHttp\Client;
 use izi\prestashop\Http\Client\Adapter\Guzzle5Adapter;
 use Psr\Http\Client\ClientInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class GuzzleClientFactory implements ClientFactoryInterface
 {
     public function create(array $options = []): ClientInterface

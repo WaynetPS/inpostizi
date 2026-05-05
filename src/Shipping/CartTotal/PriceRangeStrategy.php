@@ -8,6 +8,10 @@ use izi\prestashop\Common\Price;
 use izi\prestashop\ObjectModel\Repository\ObjectRepositoryInterface;
 use izi\prestashop\ObjectModel\Repository\RangePriceRepository;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class PriceRangeStrategy implements CartTotalDeliveryStrategyInterface
 {
     /**

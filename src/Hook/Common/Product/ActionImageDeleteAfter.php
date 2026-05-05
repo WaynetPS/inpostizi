@@ -9,6 +9,10 @@ use izi\prestashop\Hook\Exception\InvalidHookParamException;
 use izi\prestashop\Hook\HookInterface;
 use izi\prestashop\Product\Event\ImageEvent;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ActionImageDeleteAfter implements HookInterface
 {
     public const HOOK_NAME = 'actionObjectImageDeleteAfter';

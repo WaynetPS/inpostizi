@@ -7,6 +7,10 @@ namespace izi\prestashop\MerchantApi\Handler;
 use izi\prestashop\MerchantApi\Command\DeleteBasketBindingCommand;
 use izi\prestashop\Repository\BasketSessionRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class DeleteBasketBindingHandler implements DeleteBasketBindingHandlerInterface
 {
     /**

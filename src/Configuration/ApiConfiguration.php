@@ -16,6 +16,10 @@ use izi\prestashop\OAuth2\Token\BearerToken;
 use Symfony\Component\Serializer\Exception\ExceptionInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @implements PersistentConfigurationInterface<ApiConfigurationInterface>
  */

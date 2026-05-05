@@ -9,6 +9,10 @@ use izi\prestashop\Hook\HookInterface;
 use izi\prestashop\View\Asset\AssetManagerInterface;
 use izi\prestashop\View\Asset\Provider\AssetsProviderInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ActionAdminControllerSetMedia implements HookInterface
 {
     use AssetRegistryUpdaterTrait;

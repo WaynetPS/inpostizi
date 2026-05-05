@@ -8,6 +8,10 @@ use izi\prestashop\Builder\Basket\BasketAppRequestBuilderInterface as RequestBui
 use izi\prestashop\Builder\Basket\MerchantApiResponseBuilderInterface as ResponseBuilder;
 use izi\prestashop\Entities\BasketInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface BasketBuilderFactoryInterface
 {
     public function createRequestBuilder(BasketInterface $basket, ?int $shopId = null): RequestBuilder;

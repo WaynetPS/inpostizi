@@ -8,6 +8,10 @@ use izi\prestashop\Command\GetOrderConfirmationUrlCommand;
 use izi\prestashop\Order\ContextCustomerUpdater;
 use izi\prestashop\Repository\BasketSessionRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class GetOrderConfirmationUrlHandler implements GetOrderConfirmationUrlHandlerInterface
 {
     use CommandHandlerTrait;

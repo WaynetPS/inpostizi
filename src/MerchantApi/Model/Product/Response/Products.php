@@ -6,6 +6,10 @@ namespace izi\prestashop\MerchantApi\Model\Product\Response;
 
 use izi\prestashop\Common\HotProduct\Product;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Products implements \JsonSerializable
 {
     /**

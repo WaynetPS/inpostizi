@@ -6,6 +6,10 @@ namespace izi\prestashop\Configuration;
 
 use izi\prestashop\Common\PaymentType;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface OrdersConfigurationInterface
 {
     /**

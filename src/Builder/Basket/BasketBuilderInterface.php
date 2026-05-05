@@ -6,6 +6,10 @@ namespace izi\prestashop\Builder\Basket;
 
 use izi\prestashop\Common\Basket\Notice;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @template T of object
  */

@@ -15,6 +15,10 @@ use PrestaShop\PrestaShop\Core\Module\ModuleManagerInterface;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class InstallExtensionHandler
 {
     use CommandHandlerTrait;

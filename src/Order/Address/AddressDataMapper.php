@@ -7,6 +7,10 @@ namespace izi\prestashop\Order\Address;
 use izi\prestashop\Common\Order\DeliveryAddress;
 use izi\prestashop\Common\PhoneNumber;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class AddressDataMapper
 {
     public function mapDeliveryAddress(\Address $address): DeliveryAddress

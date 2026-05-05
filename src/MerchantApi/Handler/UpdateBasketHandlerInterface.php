@@ -7,6 +7,10 @@ namespace izi\prestashop\MerchantApi\Handler;
 use izi\prestashop\MerchantApi\Command\UpdateBasketCommand;
 use izi\prestashop\MerchantApi\Model\Basket\Response\Basket;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface UpdateBasketHandlerInterface
 {
     public function __invoke(UpdateBasketCommand $command): Basket;

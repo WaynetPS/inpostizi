@@ -6,6 +6,10 @@ namespace izi\prestashop\BasketApp\Product\Response;
 
 use izi\prestashop\Enum\StringEnum;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @method static self Active()
  * @method static self Inactive()

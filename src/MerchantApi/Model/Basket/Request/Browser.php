@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\MerchantApi\Model\Basket\Request;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Browser implements \JsonSerializable
 {
     /**

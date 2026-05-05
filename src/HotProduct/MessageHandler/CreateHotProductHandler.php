@@ -15,6 +15,10 @@ use izi\prestashop\HotProduct\HotProductRepositoryInterface;
 use izi\prestashop\HotProduct\HotProductValidator;
 use izi\prestashop\HotProduct\Message\CreateHotProductCommand;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CreateHotProductHandler implements CreateHotProductHandlerInterface
 {
     use CommandHandlerTrait;

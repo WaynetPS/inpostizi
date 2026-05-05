@@ -6,6 +6,10 @@ namespace izi\prestashop\HotProduct\Message;
 
 use izi\prestashop\HotProduct\MessageHandler\DeleteRemoteProductHandler;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @see DeleteRemoteProductHandler
  */

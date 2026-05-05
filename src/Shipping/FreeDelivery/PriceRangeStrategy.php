@@ -7,6 +7,10 @@ namespace izi\prestashop\Shipping\FreeDelivery;
 use izi\prestashop\Configuration\PrestaShopConfiguration;
 use izi\prestashop\ObjectModel\ObjectManagerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class PriceRangeStrategy implements MinAmountCalculationStrategyInterface
 {
     /**

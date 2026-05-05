@@ -13,6 +13,10 @@ use izi\prestashop\Hook\Legacy\ControllerHelper;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ActionAdminCartRuleSaveAfter implements HookInterface
 {
     public const HOOK_NAME = 'actionAdminCartRulesControllerSaveAfter';

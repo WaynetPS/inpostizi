@@ -7,6 +7,10 @@ namespace izi\prestashop\Hook\Webservice;
 use izi\prestashop\Hook\HookInterface;
 use izi\prestashop\Webservice\Model\InPostOrder;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @phpstan-type WSResource array{
  *     class: class-string<\ObjectModel>,

@@ -9,6 +9,10 @@ use izi\prestashop\ObjectModel\OrderMaintainingLoaderTrait;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\TransformationFailedException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @template T of \ObjectModel
  */

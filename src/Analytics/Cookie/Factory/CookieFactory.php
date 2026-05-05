@@ -6,6 +6,10 @@ namespace izi\prestashop\Analytics\Cookie\Factory;
 
 use Symfony\Component\HttpFoundation\Cookie;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CookieFactory implements CookieFactoryInterface
 {
     public function create(string $name, ?string $value, int $expire = 0, string $path = '/', string $domain = '', bool $secure = false, bool $httpOnly = true): Cookie

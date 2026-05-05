@@ -6,6 +6,10 @@ namespace izi\prestashop\Hook\Front;
 
 use izi\prestashop\Configuration\GeneralConfigurationInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 trait ThankYouWidgetRendererTrait
 {
     /**

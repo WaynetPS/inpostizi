@@ -26,6 +26,10 @@ use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @implements PersistentConfigurationInterface<GuiConfigurationInterface>
  */

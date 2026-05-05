@@ -9,6 +9,10 @@ use izi\prestashop\Hook\Exception\InvalidHookParamException;
 use izi\prestashop\Hook\HookInterface;
 use izi\prestashop\Product\Event\StockQuantityUpdatedEvent;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ActionUpdateQuantity implements HookInterface
 {
     public const HOOK_NAME = 'actionUpdateQuantity';

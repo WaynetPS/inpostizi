@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\MerchantApi\Model\Order\Request;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class AddressDetails implements \JsonSerializable
 {
     public const BUILDING_NUMBER_PLACEHOLDER = '_';

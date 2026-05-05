@@ -6,6 +6,10 @@ namespace InPost\Izi\Upgrade;
 
 use Symfony\Component\Filesystem\Filesystem;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @internal
  */

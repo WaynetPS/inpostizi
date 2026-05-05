@@ -9,6 +9,10 @@ use izi\prestashop\Hook\Front\DisplayProductActions;
 use izi\prestashop\View\Asset\Provider\AssetsProviderInterface;
 use izi\prestashop\View\Asset\Provider\DTO\Assets;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ProductPageAssetsProvider implements AssetsProviderInterface
 {
     /**

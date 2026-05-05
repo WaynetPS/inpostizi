@@ -23,6 +23,10 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\SerializerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class SerializerFactory
 {
     public static function create(): SerializerInterface

@@ -6,6 +6,10 @@ namespace izi\prestashop\MerchantApi\Command;
 
 use izi\prestashop\MerchantApi\Handler\GetOrderHandler;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @see GetOrderHandler
  */

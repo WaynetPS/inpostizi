@@ -9,6 +9,10 @@ use Symfony\Component\Serializer\Exception\InvalidArgumentException;
 use Symfony\Component\Serializer\Exception\UnexpectedValueException;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class PriceAmountNormalizer implements NormalizerInterface
 {
     public function normalize($object, $format = null, array $context = []): string

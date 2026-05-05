@@ -17,6 +17,7 @@ build-zip:
 	rm -rf /tmp/inpostizi/.php-cs-fixer.*
 	rm -rf /tmp/inpostizi/_dev
 	rm -rf /tmp/inpostizi/_admin_dev
+	rm -rf /tmp/inpostizi/_assets
 	rm -rf /tmp/inpostizi/tests
 	rm -rf /tmp/inpostizi/translations/validators.php
 	rm -rf /tmp/inpostizi/docker-compose.yml

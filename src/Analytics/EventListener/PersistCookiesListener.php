@@ -12,6 +12,10 @@ use izi\prestashop\Security\Voter\BindingWidgetVoter;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class PersistCookiesListener implements EventSubscriberInterface
 {
     /**

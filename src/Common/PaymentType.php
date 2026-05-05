@@ -8,6 +8,10 @@ use izi\prestashop\Enum\NotAnEnum;
 use izi\prestashop\Translation\TranslatableInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @todo: Cannot be modeled as an enum since InPost does not consider adding new values as a breaking change.
  *

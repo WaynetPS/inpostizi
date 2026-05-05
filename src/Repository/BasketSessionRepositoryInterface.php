@@ -7,6 +7,10 @@ namespace izi\prestashop\Repository;
 use izi\prestashop\Entities\BasketInterface;
 use izi\prestashop\Entities\BasketSessionInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @template T of BasketSessionInterface
  */

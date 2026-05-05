@@ -11,6 +11,10 @@ use izi\prestashop\BasketApp\Exception\BasketNotFoundException;
 use izi\prestashop\Command\UnbindBasketCommand;
 use izi\prestashop\Repository\BasketSessionRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UnbindBasketHandler implements UnbindBasketHandlerInterface
 {
     /**

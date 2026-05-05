@@ -6,6 +6,10 @@ namespace izi\prestashop\Installer\Database;
 
 use izi\prestashop\Database\Connection;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 abstract class AbstractMigration implements MigrationInterface
 {
     /**

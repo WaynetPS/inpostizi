@@ -9,6 +9,10 @@ use izi\prestashop\Translation\TranslatableInterface;
 use PrestaShop\PrestaShop\Adapter\Presenter\Product\ProductLazyArray;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @method static self Standard()
  * @method static self Combination()

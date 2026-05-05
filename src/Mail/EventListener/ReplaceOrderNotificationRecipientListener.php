@@ -8,6 +8,10 @@ use izi\prestashop\Mail\Event\SendEmailEvent;
 use izi\prestashop\Mail\Resolver\OrderMailRecipientResolver;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ReplaceOrderNotificationRecipientListener implements EventSubscriberInterface
 {
     /**

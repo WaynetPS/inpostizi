@@ -6,6 +6,10 @@ namespace izi\prestashop\HotProduct;
 
 use izi\prestashop\Product\ReferenceId;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface HotProductRepositoryInterface
 {
     public function add(HotProduct $product): void;

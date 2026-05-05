@@ -9,6 +9,10 @@ use izi\prestashop\Builder\Order\OrderEventBuilderFactoryInterface;
 use izi\prestashop\Command\UpdateOrderStatusCommand;
 use izi\prestashop\Repository\BasketSessionRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UpdateOrderStatusHandler implements UpdateOrderStatusHandlerInterface
 {
     use CommandHandlerTrait;

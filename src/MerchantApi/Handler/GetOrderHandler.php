@@ -14,6 +14,10 @@ use izi\prestashop\ObjectModel\Repository\ObjectRepositoryInterface;
 use izi\prestashop\PrestashopOrder;
 use izi\prestashop\Repository\BasketSessionRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @internal expect constructor signature to change
  */

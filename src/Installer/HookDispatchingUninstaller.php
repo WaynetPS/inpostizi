@@ -7,6 +7,10 @@ namespace izi\prestashop\Installer;
 use izi\prestashop\Hook\Adapter\HookDispatcher;
 use izi\prestashop\Hook\HookDispatcherInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class HookDispatchingUninstaller implements UninstallerInterface
 {
     /**

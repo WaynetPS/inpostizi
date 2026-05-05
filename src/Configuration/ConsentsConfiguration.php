@@ -9,6 +9,10 @@ use izi\prestashop\Configuration\DTO\Consent;
 use Symfony\Component\Serializer\Exception\ExceptionInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @implements PersistentConfigurationInterface<ConsentsConfigurationInterface>
  */

@@ -6,6 +6,10 @@ namespace izi\prestashop\ProductOptions;
 
 use izi\prestashop\Product\Image\ImageGalleryType;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class ProductOptions
 {
     /**

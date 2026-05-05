@@ -12,6 +12,10 @@ use izi\prestashop\MerchantApi\Command\Basket\CreateCartCommand;
 use izi\prestashop\ObjectModel\ObjectManagerInterface;
 use izi\prestashop\ObjectModel\Repository\CurrencyRepository;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CreateCartHandler implements CreateCartHandlerInterface
 {
     use CommandHandlerTrait;

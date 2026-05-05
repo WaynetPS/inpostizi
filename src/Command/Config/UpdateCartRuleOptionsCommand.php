@@ -8,6 +8,10 @@ use izi\prestashop\Handler\Config\UpdateCartRuleOptionsHandler;
 use izi\prestashop\PromoCode\CartRuleOptions;
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @see UpdateCartRuleOptionsHandler
  */

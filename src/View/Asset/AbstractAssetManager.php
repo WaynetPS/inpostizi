@@ -10,6 +10,10 @@ use Symfony\Component\Asset\PathPackage;
 use Symfony\Component\Asset\VersionStrategy\StaticVersionStrategy;
 use Symfony\Component\Asset\VersionStrategy\VersionStrategyInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 abstract class AbstractAssetManager implements AssetManagerInterface
 {
     /**

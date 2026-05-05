@@ -6,6 +6,10 @@ namespace izi\prestashop\MerchantApi\Model\Order\Request;
 
 use izi\prestashop\Common\PaymentType;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class EventData implements \JsonSerializable
 {
     /**

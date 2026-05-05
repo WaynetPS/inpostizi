@@ -11,6 +11,10 @@ use izi\prestashop\Extension\ExtensionVersion;
 use izi\prestashop\Module\ModuleRepository;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ExtensionViewFactory
 {
     /**

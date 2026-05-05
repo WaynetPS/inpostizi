@@ -9,6 +9,10 @@ use izi\prestashop\Analytics\Cookie\Repository\CookieRepositoryInterface;
 use izi\prestashop\Analytics\Parameters;
 use Symfony\Component\HttpFoundation\Request;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class TikTokClickIdExtractor extends GenericClickIdExtractor
 {
     public function __construct(CookieFactoryInterface $cookieFactory, CookieRepositoryInterface $cookieRepository, array $options = [])

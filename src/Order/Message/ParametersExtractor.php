@@ -8,6 +8,10 @@ use izi\prestashop\Common\Delivery\ServiceCode;
 use izi\prestashop\MerchantApi\Model\Order\Request\CreateOrderRequest;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ParametersExtractor implements ParametersExtractorInterface, ParameterDescriptorInterface
 {
     /**

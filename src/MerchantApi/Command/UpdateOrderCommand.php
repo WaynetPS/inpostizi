@@ -7,6 +7,10 @@ namespace izi\prestashop\MerchantApi\Command;
 use izi\prestashop\MerchantApi\Handler\UpdateOrderHandler;
 use izi\prestashop\MerchantApi\Model\Order\Request\OrderEvent;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @see UpdateOrderHandler
  */

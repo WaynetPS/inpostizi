@@ -6,6 +6,10 @@ namespace izi\prestashop\Shipping\ProductDimensions;
 
 use izi\prestashop\Common\Dimensions;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface ProductDimensionsDeliveryStrategyInterface
 {
     /**

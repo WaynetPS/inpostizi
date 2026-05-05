@@ -6,6 +6,10 @@ namespace izi\prestashop\Common\Basket;
 
 use izi\prestashop\Common\QuantityType;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @template T of (int|float)
  */

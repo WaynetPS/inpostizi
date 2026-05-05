@@ -8,6 +8,10 @@ use GuzzleHttp\Exception\ConnectException;
 use Psr\Http\Client\NetworkExceptionInterface;
 use Psr\Http\Message\RequestInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class NetworkException extends \RuntimeException implements NetworkExceptionInterface
 {
     private $request;

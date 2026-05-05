@@ -13,6 +13,10 @@ use izi\prestashop\View\Asset\Provider\AssetsProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ActionFrontControllerSetMedia implements HookInterface
 {
     use AssetRegistryUpdaterTrait;

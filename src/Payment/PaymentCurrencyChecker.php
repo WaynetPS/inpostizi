@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Payment;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class PaymentCurrencyChecker
 {
     public function check(\PaymentModule $paymentModule, int $currencyId): bool

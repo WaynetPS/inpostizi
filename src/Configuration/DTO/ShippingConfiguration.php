@@ -11,6 +11,10 @@ use izi\prestashop\Configuration\OptionalServicesConfigurationInterface;
 use izi\prestashop\Configuration\ShippingConfigurationInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ShippingConfiguration implements ShippingConfigurationInterface, OptionalServicesConfigurationInterface
 {
     /**

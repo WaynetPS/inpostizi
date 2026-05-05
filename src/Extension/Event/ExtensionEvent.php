@@ -6,6 +6,10 @@ namespace izi\prestashop\Extension\Event;
 
 use izi\prestashop\Event\Event;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ExtensionEvent extends Event
 {
     public const INSTALLED = 'inpostizi.extension.installed';

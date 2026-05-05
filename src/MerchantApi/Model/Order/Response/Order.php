@@ -9,6 +9,10 @@ use izi\prestashop\Common\Customer\InvoiceDetails;
 use izi\prestashop\Common\Order\Consent;
 use izi\prestashop\Common\Order\Product;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Order implements \JsonSerializable
 {
     /**

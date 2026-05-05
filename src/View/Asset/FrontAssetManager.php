@@ -7,6 +7,10 @@ namespace izi\prestashop\View\Asset;
 use Symfony\Component\Asset\VersionStrategy\JsonManifestVersionStrategy;
 use Symfony\Component\Asset\VersionStrategy\VersionStrategyInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class FrontAssetManager extends AbstractAssetManager
 {
     /**

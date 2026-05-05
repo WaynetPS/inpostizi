@@ -7,6 +7,10 @@ namespace izi\prestashop\MerchantApi\EventListener;
 use izi\prestashop\MerchantApi\Event\CartUpdatedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UpdateCartRulesListener implements EventSubscriberInterface
 {
     /**

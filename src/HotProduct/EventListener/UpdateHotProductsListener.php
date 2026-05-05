@@ -26,6 +26,10 @@ use Psr\Http\Client\NetworkExceptionInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UpdateHotProductsListener implements EventSubscriberInterface
 {
     private const OBSERVED_PRODUCT_PROPERTIES = [

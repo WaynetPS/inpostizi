@@ -8,6 +8,10 @@ use izi\prestashop\MerchantApi\Model\Basket\Request\BasketEvent;
 use izi\prestashop\MerchantApi\Model\Basket\Request\BindingConfirmation;
 use izi\prestashop\MerchantApi\Model\Order\Request\CreateOrderRequest;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @template T of BasketInterface
  */

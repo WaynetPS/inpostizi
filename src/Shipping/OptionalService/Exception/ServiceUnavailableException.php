@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Shipping\OptionalService\Exception;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class ServiceUnavailableException extends \Exception
 {
     /**

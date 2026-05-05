@@ -6,6 +6,10 @@ namespace izi\prestashop\BasketApp\Payment\Response;
 
 use izi\prestashop\Common\PaymentType;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @implements \IteratorAggregate<PaymentType>
  */

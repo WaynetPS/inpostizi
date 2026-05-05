@@ -8,6 +8,10 @@ use izi\prestashop\BasketApp\Product\Exception as Product;
 use izi\prestashop\Common\Error\Error;
 use Psr\Http\Message\RequestInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class BasketAppException extends \RuntimeException
 {
     /**

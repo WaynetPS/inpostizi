@@ -7,6 +7,10 @@ namespace izi\prestashop\Configuration\DTO\Shipping;
 use izi\prestashop\Common\Delivery\ServiceCode;
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CarrierMapping implements \JsonSerializable
 {
     /**

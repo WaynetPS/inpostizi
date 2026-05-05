@@ -7,6 +7,10 @@ namespace izi\prestashop\Form\DataTransformer;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\TransformationFailedException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * Polyfill for Sf < 4.1
  *

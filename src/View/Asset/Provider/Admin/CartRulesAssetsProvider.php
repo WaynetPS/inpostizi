@@ -8,6 +8,10 @@ use izi\prestashop\View\Asset\Provider\AssetsProviderInterface;
 use izi\prestashop\View\Asset\Provider\DTO\Assets;
 use Symfony\Component\HttpFoundation\RequestStack;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CartRulesAssetsProvider implements AssetsProviderInterface
 {
     /**

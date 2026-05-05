@@ -10,6 +10,10 @@ use izi\prestashop\ObjectModel\ObjectManagerInterface;
 use izi\prestashop\Shipping\OptionalService\Exception\ServiceUnavailableException;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class GiftWrappingHandler implements OptionalServiceHandlerInterface
 {
     /**

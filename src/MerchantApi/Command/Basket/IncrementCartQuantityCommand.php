@@ -6,6 +6,10 @@ namespace izi\prestashop\MerchantApi\Command\Basket;
 
 use izi\prestashop\MerchantApi\Handler\Basket\IncrementCartQuantityHandler;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @see IncrementCartQuantityHandler
  */

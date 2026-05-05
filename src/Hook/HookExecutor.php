@@ -11,6 +11,10 @@ use izi\prestashop\Hook\Exception\HookNotImplementedException;
 use PrestaShop\PrestaShop\Core\Module\WidgetInterface;
 use Psr\Container\ContainerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class HookExecutor implements HookExecutorInterface, ServiceSubscriberInterface
 {
     /**

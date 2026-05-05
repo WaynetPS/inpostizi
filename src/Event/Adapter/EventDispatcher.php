@@ -9,6 +9,10 @@ use izi\prestashop\Event\EventDispatcherInterface as ModuleEventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface as ContractsEventDispatcherInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @mixin EventDispatcherInterface
  */

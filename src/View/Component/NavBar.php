@@ -6,6 +6,10 @@ namespace izi\prestashop\View\Component;
 
 use Twig\Environment;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @implements \IteratorAggregate<string>
  */

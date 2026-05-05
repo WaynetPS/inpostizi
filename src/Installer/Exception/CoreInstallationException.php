@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Installer\Exception;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CoreInstallationException extends InstallerException
 {
     public static function create(\Module $module): self

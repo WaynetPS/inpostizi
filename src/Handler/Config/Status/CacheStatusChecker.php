@@ -6,6 +6,10 @@ namespace izi\prestashop\Handler\Config\Status;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CacheStatusChecker implements StatusCheckerInterface
 {
     /**

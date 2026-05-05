@@ -6,6 +6,10 @@ namespace izi\prestashop\Configuration;
 
 use izi\prestashop\Configuration\DTO\Consent;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface ConsentsConfigurationInterface
 {
     /**

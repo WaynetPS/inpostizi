@@ -7,6 +7,10 @@ namespace izi\prestashop\Product\Price;
 use izi\prestashop\Module\ModuleRepository;
 use Psr\Log\LoggerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class LowestPriceProviderFactory
 {
     /**

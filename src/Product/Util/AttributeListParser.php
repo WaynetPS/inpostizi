@@ -6,6 +6,10 @@ namespace izi\prestashop\Product\Util;
 
 use izi\prestashop\Configuration\PrestaShopConfiguration;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @internal
  */

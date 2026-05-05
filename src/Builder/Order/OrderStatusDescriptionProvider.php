@@ -7,6 +7,10 @@ namespace izi\prestashop\Builder\Order;
 use izi\prestashop\Configuration\OrdersConfigurationInterface;
 use izi\prestashop\ObjectModel\Repository\ObjectRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class OrderStatusDescriptionProvider
 {
     /**

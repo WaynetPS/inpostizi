@@ -15,6 +15,10 @@ use Symfony\Component\Finder\Finder;
 use ZipStream\Option\Archive;
 use ZipStream\ZipStream;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class DownloadModuleDataHandler implements DownloadModuleDataHandlerInterface
 {
     use CommandHandlerTrait;

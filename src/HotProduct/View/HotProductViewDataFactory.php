@@ -13,6 +13,10 @@ use izi\prestashop\ObjectModel\Repository\ObjectRepositoryInterface;
 use izi\prestashop\ObjectModel\Repository\ProductRepository;
 use izi\prestashop\Product\ReferenceId;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class HotProductViewDataFactory
 {
     /**

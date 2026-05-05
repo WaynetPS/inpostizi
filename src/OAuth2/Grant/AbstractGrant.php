@@ -8,6 +8,10 @@ use izi\prestashop\OAuth2\Authentication\ClientCredentialsInterface;
 use izi\prestashop\OAuth2\AuthorizationServerClientInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 abstract class AbstractGrant implements GrantTypeInterface
 {
     /**

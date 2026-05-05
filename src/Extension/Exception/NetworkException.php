@@ -7,6 +7,10 @@ namespace izi\prestashop\Extension\Exception;
 use Psr\Http\Client\NetworkExceptionInterface;
 use Psr\Http\Message\RequestInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class NetworkException extends ExtensionServiceException implements NetworkExceptionInterface
 {
     /**

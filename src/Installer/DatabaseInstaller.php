@@ -11,6 +11,10 @@ use izi\prestashop\Installer\Exception\InstallerException;
 use Symfony\Component\Translation\IdentityTranslator;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class DatabaseInstaller implements InstallerInterface
 {
     private const SCHEMA_VERSION_CONFIG_KEY = 'INPOST_PAY_DB_SCHEMA_VERSION';

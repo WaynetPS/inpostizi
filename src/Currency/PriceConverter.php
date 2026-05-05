@@ -7,6 +7,10 @@ namespace izi\prestashop\Currency;
 use izi\prestashop\Configuration\PrestaShopConfiguration;
 use izi\prestashop\ObjectModel\Repository\ObjectRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class PriceConverter implements PriceConverterInterface
 {
     /**

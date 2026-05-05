@@ -15,6 +15,10 @@ use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Guzzle5Adapter implements ClientInterface
 {
     private $client;

@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Common\Order;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class DeliveryAddress implements \JsonSerializable
 {
     /**

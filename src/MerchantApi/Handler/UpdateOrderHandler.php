@@ -14,6 +14,10 @@ use izi\prestashop\MerchantApi\Model\Order\Response\OrderStatusData;
 use izi\prestashop\ObjectModel\Repository\ObjectRepositoryInterface;
 use Psr\Log\LoggerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UpdateOrderHandler implements UpdateOrderHandlerInterface
 {
     /**

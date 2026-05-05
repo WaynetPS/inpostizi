@@ -6,6 +6,10 @@ namespace izi\prestashop\Builder\Basket;
 
 use izi\prestashop\BasketApp\Basket\Request\Basket;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @template-extends BasketBuilderInterface<Basket>
  */

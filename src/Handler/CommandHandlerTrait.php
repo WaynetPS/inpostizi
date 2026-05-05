@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Handler;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 trait CommandHandlerTrait
 {
     public static function getHandledCommandClass(): string

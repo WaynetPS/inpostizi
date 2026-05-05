@@ -14,6 +14,10 @@ use izi\prestashop\Configuration\PersistentConfigurationInterface;
 use izi\prestashop\Configuration\ProductConfiguration;
 use izi\prestashop\Configuration\ProductConfigurationInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UpdateGeneralConfigurationCommandFactory
 {
     /**

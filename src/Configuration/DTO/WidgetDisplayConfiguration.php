@@ -11,6 +11,10 @@ use izi\prestashop\View\Widget\WidgetConfiguration;
 use izi\prestashop\View\Widget\WidgetConfigurationInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class WidgetDisplayConfiguration implements WidgetDisplayConfigurationInterface
 {
     /**

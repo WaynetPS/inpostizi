@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Http\Util;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UriResolver
 {
     public static function resolve(string $uri, string $baseUri): string

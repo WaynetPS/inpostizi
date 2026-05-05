@@ -8,6 +8,10 @@ use izi\prestashop\Database\Connection;
 use izi\prestashop\Product\ReferenceId;
 use Psr\Clock\ClockInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class HotProductRepository implements HotProductRepositoryInterface
 {
     public const TABLE_NAME = 'inpostizi_hot_product';

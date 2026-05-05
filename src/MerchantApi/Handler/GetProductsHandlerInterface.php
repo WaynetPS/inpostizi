@@ -7,6 +7,10 @@ namespace izi\prestashop\MerchantApi\Handler;
 use izi\prestashop\MerchantApi\Command\GetProductsCommand;
 use izi\prestashop\MerchantApi\Model\Product\Response\Products;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface GetProductsHandlerInterface
 {
     public function __invoke(GetProductsCommand $command): Products;

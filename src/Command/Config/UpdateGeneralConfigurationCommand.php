@@ -12,6 +12,10 @@ use izi\prestashop\Handler\Config\UpdateGeneralConfigurationHandler;
 use izi\prestashop\Validator\InPostApiCredentials;
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @see UpdateGeneralConfigurationHandler
  */

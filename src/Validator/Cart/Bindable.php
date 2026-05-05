@@ -8,6 +8,10 @@ use izi\prestashop\Common\BindingPlace;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Exception\InvalidArgumentException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Bindable extends Constraint
 {
     /**

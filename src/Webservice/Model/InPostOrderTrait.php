@@ -8,6 +8,10 @@ use izi\prestashop\ObjectModel\ObjectManagerInterface;
 use izi\prestashop\Repository\OrderDataRepositoryInterface;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @internal
  *

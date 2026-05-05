@@ -6,6 +6,10 @@ namespace izi\prestashop\Handler\Config;
 
 use izi\prestashop\Command\Config\DownloadModuleDataCommand;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface DownloadModuleDataHandlerInterface
 {
     /**

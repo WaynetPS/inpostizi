@@ -10,6 +10,10 @@ use PrestaShop\PrestaShop\Core\Translation\Storage\Finder\TranslationFinder as C
 use PrestaShopBundle\Translation\Provider\TranslationFinder as LegacyTranslationFinder;
 use Symfony\Component\Translation\MessageCatalogue;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class TranslationFinder
 {
     /**

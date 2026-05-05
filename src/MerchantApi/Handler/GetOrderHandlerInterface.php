@@ -7,6 +7,10 @@ namespace izi\prestashop\MerchantApi\Handler;
 use izi\prestashop\MerchantApi\Command\GetOrderCommand;
 use izi\prestashop\MerchantApi\Model\Order\Response\Order;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface GetOrderHandlerInterface
 {
     public function __invoke(GetOrderCommand $command): Order;

@@ -6,6 +6,10 @@ namespace izi\prestashop\Installer\Database;
 
 use izi\prestashop\ObjectModel\Entity\InPostIziBasketSession;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Version_2_0_0 extends AbstractMigration
 {
     public function getVersion(): string

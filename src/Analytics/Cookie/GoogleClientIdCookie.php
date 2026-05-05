@@ -7,6 +7,10 @@ namespace izi\prestashop\Analytics\Cookie;
 use izi\prestashop\Analytics\Parameters;
 use Symfony\Component\HttpFoundation\Request;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class GoogleClientIdCookie implements CookieExtractorInterface
 {
     private const COOKIE_NAME = '_ga';

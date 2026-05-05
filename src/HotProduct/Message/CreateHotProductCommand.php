@@ -7,6 +7,10 @@ namespace izi\prestashop\HotProduct\Message;
 use izi\prestashop\HotProduct\MessageHandler\CreateHotProductHandler;
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @see CreateHotProductHandler
  */

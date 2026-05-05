@@ -9,6 +9,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class BindingWidgetVoter extends Voter
 {
     public const VIEW = 'inpost_izi_widget_view';

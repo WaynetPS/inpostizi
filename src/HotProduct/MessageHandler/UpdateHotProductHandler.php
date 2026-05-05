@@ -14,6 +14,10 @@ use izi\prestashop\HotProduct\HotProductDataMapperInterface;
 use izi\prestashop\HotProduct\HotProductRepositoryInterface;
 use izi\prestashop\HotProduct\Message\UpdateHotProductCommand;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UpdateHotProductHandler implements UpdateHotProductHandlerInterface
 {
     use CommandHandlerTrait;

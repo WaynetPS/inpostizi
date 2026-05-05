@@ -9,6 +9,10 @@ use izi\prestashop\Common\PriceAmount;
 use izi\prestashop\Configuration\DTO\Shipping\ServiceOptions;
 use izi\prestashop\Shipping\Exception\UnavailableDeliveryOptionException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface DeliveryPriceCalculatorInterface
 {
     /**

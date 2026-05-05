@@ -6,6 +6,10 @@ namespace izi\prestashop\Environment;
 
 use izi\prestashop\OAuth2\UriCollectionInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class AuthServerUriCollection implements UriCollectionInterface
 {
     /**

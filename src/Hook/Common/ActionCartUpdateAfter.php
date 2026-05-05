@@ -9,6 +9,10 @@ use izi\prestashop\Event\EventDispatcherInterface;
 use izi\prestashop\Hook\Exception\InvalidHookParamException;
 use izi\prestashop\Hook\HookInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ActionCartUpdateAfter implements HookInterface
 {
     public const HOOK_NAME = 'actionObjectCartUpdateAfter';

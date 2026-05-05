@@ -6,6 +6,10 @@ namespace izi\prestashop\Extension;
 
 use izi\prestashop\Extension\Exception\ExtensionServiceException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface ExtensionsServiceInterface
 {
     /**

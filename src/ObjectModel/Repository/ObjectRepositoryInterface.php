@@ -6,6 +6,10 @@ namespace izi\prestashop\ObjectModel\Repository;
 
 use izi\prestashop\ObjectModel\QueryBuilder;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @template T of \ObjectModel
  */

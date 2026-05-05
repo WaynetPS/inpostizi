@@ -7,6 +7,10 @@ namespace izi\prestashop\Form\Event;
 use izi\prestashop\Configuration\ApiConfigurationInterface;
 use izi\prestashop\Event\Event;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ApiConfigurationValidatedEvent extends Event
 {
     /**

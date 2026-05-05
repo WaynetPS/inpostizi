@@ -7,6 +7,10 @@ namespace izi\prestashop\MerchantApi\Model\Basket\Request;
 use izi\prestashop\Common\PhoneNumber;
 use izi\prestashop\Common\PromoCode;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class BasketEvent implements \JsonSerializable
 {
     /**

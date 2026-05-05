@@ -6,6 +6,10 @@ namespace izi\prestashop\Shipping\OptionalService;
 
 use izi\prestashop\Common\Delivery\DeliveryType;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CashOnDeliveryHandler implements OptionalServiceHandlerInterface
 {
     /**

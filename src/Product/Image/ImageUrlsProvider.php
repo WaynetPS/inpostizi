@@ -10,6 +10,10 @@ use izi\prestashop\ObjectModel\Repository\ObjectRepositoryInterface;
 use izi\prestashop\ProductOptions\ProductOptionsRepositoryInterface;
 use PrestaShop\PrestaShop\Adapter\Image\ImageRetriever;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @phpstan-type ImageTypes array{small: string, normal: string, large: string}
  */

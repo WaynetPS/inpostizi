@@ -13,6 +13,10 @@ use izi\prestashop\ProductOptions\ProductOptionsRepositoryInterface;
 use Symfony\Component\Form\FormFactoryInterface;
 use Twig\Environment;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class DisplayAdminProductsOptionsStepBottom implements PrestaShopVersionAwareHookInterface
 {
     public const HOOK_NAME = 'displayAdminProductsOptionsStepBottom';

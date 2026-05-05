@@ -8,6 +8,10 @@ use izi\prestashop\Enum\NotAnEnum;
 use izi\prestashop\Translation\TranslatableInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @todo: Refactor. Not an enum, custom codes are allowed.
  *

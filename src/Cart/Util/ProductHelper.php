@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Cart\Util;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ProductHelper
 {
     public static function findProductInCart(\Cart $cart, int $productId, int $combinationId, int $customizationId = 0): ?array

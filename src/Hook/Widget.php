@@ -8,6 +8,10 @@ use izi\prestashop\Hook\Exception\InvalidArgumentException;
 use izi\prestashop\View\Templating\RendererInterface;
 use PrestaShop\PrestaShop\Core\Module\WidgetInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Widget implements WidgetInterface
 {
     public const DEFAULT_TEMPLATE = 'module:inpostizi/views/templates/front/widget.tpl';

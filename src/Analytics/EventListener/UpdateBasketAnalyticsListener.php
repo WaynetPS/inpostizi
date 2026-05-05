@@ -13,6 +13,10 @@ use izi\prestashop\Event\CartUpdatedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UpdateBasketAnalyticsListener implements EventSubscriberInterface
 {
     /**

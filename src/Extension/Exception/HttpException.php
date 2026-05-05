@@ -7,6 +7,10 @@ namespace izi\prestashop\Extension\Exception;
 use izi\prestashop\Http\Exception\HttpExceptionInterface;
 use izi\prestashop\Http\Exception\HttpExceptionTrait;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class HttpException extends ExtensionServiceException implements HttpExceptionInterface
 {
     use HttpExceptionTrait;

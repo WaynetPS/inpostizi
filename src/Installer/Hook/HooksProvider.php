@@ -6,6 +6,10 @@ namespace izi\prestashop\Installer\Hook;
 
 use izi\prestashop\Hook\HookExecutor;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @internal
  */

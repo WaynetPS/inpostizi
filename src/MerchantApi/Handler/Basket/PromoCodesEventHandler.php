@@ -18,6 +18,10 @@ use izi\prestashop\PromoCode\PromoCodeManagerInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class PromoCodesEventHandler implements BasketEventHandlerInterface
 {
     /**

@@ -38,6 +38,10 @@ use izi\prestashop\Product\Util\AttributeListParser;
 use izi\prestashop\Product\Util\DescriptionFormatter;
 use izi\prestashop\Shipping\CarrierModuleTrackingNumberProvider;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @internal
  *

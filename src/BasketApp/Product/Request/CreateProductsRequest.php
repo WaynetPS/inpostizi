@@ -6,6 +6,10 @@ namespace izi\prestashop\BasketApp\Product\Request;
 
 use izi\prestashop\Common\HotProduct\IdentifiableProduct;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CreateProductsRequest implements \JsonSerializable
 {
     /**

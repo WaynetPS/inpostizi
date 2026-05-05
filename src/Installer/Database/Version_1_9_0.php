@@ -6,6 +6,10 @@ namespace izi\prestashop\Installer\Database;
 
 use izi\prestashop\Repository\ProductRestrictionsRepository;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Version_1_9_0 extends AbstractMigration
 {
     private const CATEGORY_ID_FK = ProductRestrictionsRepository::CATEGORY_RESTRICTIONS_TABLE . '-category_id';

@@ -14,6 +14,10 @@ use izi\prestashop\Repository\BasketSessionRepositoryInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CartListener implements EventSubscriberInterface
 {
     /**

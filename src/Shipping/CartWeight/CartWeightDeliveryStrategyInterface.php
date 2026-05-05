@@ -6,6 +6,10 @@ namespace izi\prestashop\Shipping\CartWeight;
 
 use izi\prestashop\Common\Weight;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface CartWeightDeliveryStrategyInterface
 {
     /**

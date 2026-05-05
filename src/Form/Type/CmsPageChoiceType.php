@@ -9,6 +9,10 @@ use PrestaShop\PrestaShop\Adapter\Shop\Context;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CmsPageChoiceType extends AbstractType
 {
     /**

@@ -6,6 +6,10 @@ namespace izi\prestashop\Configuration;
 
 use izi\prestashop\View\Widget\WidgetConfigurationInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @template T of WidgetConfigurationInterface
  */

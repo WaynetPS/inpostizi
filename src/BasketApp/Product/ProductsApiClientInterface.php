@@ -13,6 +13,10 @@ use izi\prestashop\BasketApp\Product\Response\CreateProductsResponse;
 use izi\prestashop\BasketApp\Product\Response\Product as ResponseProduct;
 use izi\prestashop\Common\HotProduct\Product;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface ProductsApiClientInterface
 {
     /**

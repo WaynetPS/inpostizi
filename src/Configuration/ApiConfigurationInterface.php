@@ -7,6 +7,10 @@ namespace izi\prestashop\Configuration;
 use izi\prestashop\Environment\EnvironmentInterface;
 use izi\prestashop\OAuth2\Authentication\ClientCredentialsRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface ApiConfigurationInterface extends ClientCredentialsRepositoryInterface
 {
     public function getEnvironment(): EnvironmentInterface;

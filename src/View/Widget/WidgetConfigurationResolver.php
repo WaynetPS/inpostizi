@@ -9,6 +9,10 @@ use Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @implements WidgetConfigurationResolverInterface<WidgetConfiguration>
  */

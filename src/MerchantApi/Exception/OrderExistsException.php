@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\MerchantApi\Exception;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class OrderExistsException extends ApiException
 {
     public const ERROR_CODE = 'ORDER_EXISTS';

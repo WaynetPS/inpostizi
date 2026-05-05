@@ -12,6 +12,10 @@ use izi\prestashop\ProductOptions\Message\UpdateProductOptionsCommand;
 use PrestaShop\PrestaShop\Core\Module\Exception\ModuleErrorException;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ActionAfterUpdateProductFormHandler implements PrestaShopVersionAwareHookInterface
 {
     public const HOOK_NAME = 'actionAfterUpdateProductFormHandler';

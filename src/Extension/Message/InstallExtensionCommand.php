@@ -6,6 +6,10 @@ namespace izi\prestashop\Extension\Message;
 
 use izi\prestashop\Extension\MessageHandler\InstallExtensionHandler;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @see InstallExtensionHandler
  */

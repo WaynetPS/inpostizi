@@ -6,6 +6,10 @@ namespace izi\prestashop\Product\Image;
 
 use izi\prestashop\Common\Product\ProductImage;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ImageUrls
 {
     /**

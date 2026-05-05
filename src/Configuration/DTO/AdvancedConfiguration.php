@@ -6,6 +6,10 @@ namespace izi\prestashop\Configuration\DTO;
 
 use izi\prestashop\Configuration\AdvancedConfigurationInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class AdvancedConfiguration implements AdvancedConfigurationInterface
 {
     /**

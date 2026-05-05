@@ -11,6 +11,10 @@ use izi\prestashop\Configuration\PromoCodesConfigurationInterface;
 use izi\prestashop\ObjectModel\Repository\CartRuleRepository;
 use izi\prestashop\ObjectModel\Repository\ObjectRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class AvailableCartRulesProvider implements AvailablePromotionsProviderInterface
 {
     private const NULL_DATE = '0000-00-00 00:00:00';

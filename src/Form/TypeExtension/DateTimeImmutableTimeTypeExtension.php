@@ -11,6 +11,10 @@ use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * Adds input option not present before Sf 4.1.
  *

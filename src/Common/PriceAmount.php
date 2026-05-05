@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Common;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class PriceAmount implements \JsonSerializable
 {
     /**

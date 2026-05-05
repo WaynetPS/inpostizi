@@ -6,6 +6,10 @@ namespace izi\prestashop\Command;
 
 use izi\prestashop\Handler\UpdateBasketHandler;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @see UpdateBasketHandler
  */

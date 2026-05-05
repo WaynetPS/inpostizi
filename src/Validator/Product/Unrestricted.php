@@ -6,6 +6,10 @@ use izi\prestashop\Common\Delivery\DeliveryType;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Exception\InvalidArgumentException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Unrestricted extends Constraint
 {
     public const ORDER_DISALLOWED_ERROR = 'inpost_izi_order_disallowed';

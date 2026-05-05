@@ -9,6 +9,10 @@ use Monolog\Logger;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 abstract class AbstractHandlerFactory implements HandlerFactoryInterface
 {
     private $environment;

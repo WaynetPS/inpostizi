@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Hook\Event;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 abstract class AbstractRenderEvent extends AbstractHookEvent
 {
     /**

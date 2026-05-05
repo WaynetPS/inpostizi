@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\MerchantApi\Exception;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class BadGatewayException extends ApiException
 {
     public const ERROR_CODE = 'BAD_GATEWAY';

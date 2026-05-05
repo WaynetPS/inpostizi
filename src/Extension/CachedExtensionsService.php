@@ -6,6 +6,10 @@ namespace izi\prestashop\Extension;
 
 use Psr\Cache\CacheItemPoolInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CachedExtensionsService implements ExtensionsServiceInterface
 {
     public const DEFAULT_TTL = 600;

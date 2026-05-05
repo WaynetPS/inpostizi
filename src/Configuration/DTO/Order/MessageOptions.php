@@ -8,6 +8,10 @@ use izi\prestashop\Order\Message\MessageFormatterInterface;
 use izi\prestashop\Validator\ProcessableMessageFormat;
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @internal
  */

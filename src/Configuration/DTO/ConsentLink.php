@@ -7,6 +7,10 @@ namespace izi\prestashop\Configuration\DTO;
 use izi\prestashop\Uuid\Uuid;
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ConsentLink implements \JsonSerializable
 {
     /**

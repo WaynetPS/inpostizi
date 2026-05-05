@@ -8,6 +8,10 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ReindexDataListener implements EventSubscriberInterface
 {
     public static function getSubscribedEvents(): array

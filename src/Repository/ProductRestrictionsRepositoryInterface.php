@@ -10,6 +10,10 @@ use izi\prestashop\Repository\Product\CategoryRestrictionsRepositoryInterface;
 use izi\prestashop\Repository\Product\FeatureRestrictionsRepositoryInterface;
 use izi\prestashop\Repository\Product\ManufacturerRestrictionsRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface ProductRestrictionsRepositoryInterface extends CategoryRestrictionsRepositoryInterface, ManufacturerRestrictionsRepositoryInterface, AttributeRestrictionsRepositoryInterface, FeatureRestrictionsRepositoryInterface
 {
     public function getProductRestrictions(?int $shopId = null): ProductRestrictions;

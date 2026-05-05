@@ -8,6 +8,10 @@ use izi\prestashop\Configuration\GeneralConfigurationInterface;
 use izi\prestashop\Hook\Exception\InvalidHookParamException;
 use izi\prestashop\Hook\HookInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class DisplayPaymentReturn implements HookInterface
 {
     use ThankYouWidgetRendererTrait;

@@ -18,6 +18,10 @@ use izi\prestashop\HotProduct\HotProductValidator;
 use izi\prestashop\HotProduct\Message\ImportHotProductCommand;
 use izi\prestashop\Product\ReferenceId;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ImportHotProductHandler implements ImportHotProductHandlerInterface
 {
     use CommandHandlerTrait;

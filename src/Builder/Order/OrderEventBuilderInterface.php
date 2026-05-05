@@ -8,6 +8,10 @@ use izi\prestashop\BasketApp\Order\Request\Delivery;
 use izi\prestashop\BasketApp\Order\Request\OrderEvent;
 use izi\prestashop\Common\Order\MerchantOrderStatus;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface OrderEventBuilderInterface
 {
     public function build(): OrderEvent;

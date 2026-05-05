@@ -6,6 +6,10 @@ namespace izi\prestashop\Shipping\CartTotal;
 
 use izi\prestashop\Common\Price;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class GenericStrategy implements CartTotalDeliveryStrategyInterface
 {
     public function isShippingAvailableBasedOnTotalPrice(\Carrier $carrier, Price $cartTotal): bool

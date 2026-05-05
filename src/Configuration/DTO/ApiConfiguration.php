@@ -11,6 +11,10 @@ use izi\prestashop\Environment\EnvironmentType;
 use izi\prestashop\OAuth2\Authentication\ClientCredentialsInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ApiConfiguration implements ApiConfigurationInterface
 {
     /**

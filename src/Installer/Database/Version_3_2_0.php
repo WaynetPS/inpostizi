@@ -6,6 +6,10 @@ namespace izi\prestashop\Installer\Database;
 
 use izi\prestashop\Analytics\BasketAnalyticsRepository;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Version_3_2_0 extends AbstractMigration
 {
     public function getVersion(): string

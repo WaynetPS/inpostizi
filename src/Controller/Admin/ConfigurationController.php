@@ -35,6 +35,10 @@ use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @Route(path="config")
  */

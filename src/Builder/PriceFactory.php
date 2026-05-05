@@ -6,6 +6,10 @@ namespace izi\prestashop\Builder;
 
 use izi\prestashop\Common\Price;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class PriceFactory
 {
     public static function create(float $net, float $gross): Price

@@ -6,6 +6,10 @@ namespace izi\prestashop\Shipping\ProductDimensions;
 
 use izi\prestashop\Common\Dimensions;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class GenericStrategy implements ProductDimensionsDeliveryStrategyInterface
 {
     public function isShippingAvailableBasedOnProductDimensions(\Carrier $carrier, Dimensions $productDimension): bool

@@ -6,6 +6,10 @@ use izi\prestashop\Event\EventDispatcherInterface;
 use izi\prestashop\Hook\HookInterface;
 use izi\prestashop\Mail\Event\SendEmailEvent;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ActionEmailSendBefore implements HookInterface
 {
     public const HOOK_NAME = 'actionEmailSendBefore';

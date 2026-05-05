@@ -10,6 +10,10 @@ use izi\prestashop\OAuth2\Authentication\ClientCredentialsInterface;
 use Symfony\Component\Form\DataMapperInterface;
 use Symfony\Component\Form\Exception\UnexpectedTypeException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ClientCredentialsDataMapper implements DataMapperInterface
 {
     /**

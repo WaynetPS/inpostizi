@@ -10,6 +10,10 @@ use izi\prestashop\Enum\StringEnum;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\TransformationFailedException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class EnumDataTransformer implements DataTransformerInterface
 {
     /**

@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Uuid;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UuidV4 extends Uuid
 {
     protected static function generate(): string

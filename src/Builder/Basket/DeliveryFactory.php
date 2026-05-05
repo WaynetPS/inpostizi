@@ -21,6 +21,10 @@ use izi\prestashop\Shipping\DeliveryPriceCalculatorInterface;
 use Psr\Clock\ClockInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @todo: refactor
  */

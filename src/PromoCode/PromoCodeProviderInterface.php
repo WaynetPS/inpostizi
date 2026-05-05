@@ -6,6 +6,10 @@ namespace izi\prestashop\PromoCode;
 
 use izi\prestashop\Common\PromoCode;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface PromoCodeProviderInterface
 {
     /**

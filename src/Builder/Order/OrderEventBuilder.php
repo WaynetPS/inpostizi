@@ -10,6 +10,10 @@ use izi\prestashop\BasketApp\Order\Request\OrderEventData;
 use izi\prestashop\Common\Order\MerchantOrderStatus;
 use Psr\Clock\ClockInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class OrderEventBuilder implements OrderEventBuilderInterface
 {
     /**

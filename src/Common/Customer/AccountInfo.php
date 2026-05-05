@@ -7,6 +7,10 @@ namespace izi\prestashop\Common\Customer;
 use izi\prestashop\Common\PhoneNumber;
 use izi\prestashop\MerchantApi\Model\Order\Request\AccountInfo as OrderRequestAccountInfo;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class AccountInfo implements \JsonSerializable
 {
     /**

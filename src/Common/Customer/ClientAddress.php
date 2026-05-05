@@ -6,6 +6,10 @@ namespace izi\prestashop\Common\Customer;
 
 use izi\prestashop\MerchantApi\Model\Order\Request\ClientAddress as OrderRequestClientAddress;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ClientAddress implements \JsonSerializable
 {
     /**

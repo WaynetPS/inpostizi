@@ -9,6 +9,10 @@ use izi\prestashop\Configuration\DTO\Order\MessageOptions;
 use izi\prestashop\Serializer\SafeDeserializerTrait;
 use Symfony\Component\Serializer\SerializerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @implements PersistentConfigurationInterface<OrdersConfigurationInterface>
  */

@@ -6,6 +6,10 @@ namespace izi\prestashop\PromoCode;
 
 use izi\prestashop\Common\Basket\AvailablePromotion;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface AvailablePromotionsProviderInterface
 {
     public const MAX_PROMO_COUNT = 5;

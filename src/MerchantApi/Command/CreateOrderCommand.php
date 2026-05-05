@@ -7,6 +7,10 @@ namespace izi\prestashop\MerchantApi\Command;
 use izi\prestashop\MerchantApi\Handler\CreateOrderHandler;
 use izi\prestashop\MerchantApi\Model\Order\Request\CreateOrderRequest;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @see CreateOrderHandler
  */

@@ -6,6 +6,10 @@ namespace izi\prestashop\Installer\Database;
 
 use izi\prestashop\ProductOptions\ProductOptionsRepository;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Version_2_4_0 extends AbstractMigration
 {
     private const PO_PRODUCT_ID_FK = ProductOptionsRepository::TABLE_NAME . '-product_id';

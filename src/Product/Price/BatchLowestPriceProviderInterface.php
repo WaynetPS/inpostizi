@@ -6,6 +6,10 @@ namespace izi\prestashop\Product\Price;
 
 use Symfony\Contracts\Service\ResetInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface BatchLowestPriceProviderInterface extends LowestPriceProviderInterface, ResetInterface
 {
     /**

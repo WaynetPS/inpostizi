@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Configuration;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface GeneralConfigurationInterface
 {
     public function isEnabledForEveryone(): bool;

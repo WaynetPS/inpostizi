@@ -15,6 +15,10 @@ use izi\prestashop\PromoCode\PromoCodeProviderInterface;
 use Psr\Clock\ClockInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class BasketBuilderFactory implements BasketBuilderFactoryInterface
 {
     /**

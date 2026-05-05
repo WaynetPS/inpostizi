@@ -6,6 +6,10 @@ namespace izi\prestashop\Configuration;
 
 use izi\prestashop\Product\Image\ImageGalleryType;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @implements PersistentConfigurationInterface<ProductConfigurationInterface>
  */

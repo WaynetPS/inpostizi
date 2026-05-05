@@ -10,6 +10,10 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class LoggingClient implements ClientInterface
 {
     /**

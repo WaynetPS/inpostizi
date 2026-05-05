@@ -8,6 +8,10 @@ use izi\prestashop\Product\ProductType;
 use izi\prestashop\Product\Restriction\RestrictedAction;
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ProductRestrictions
 {
     /**

@@ -32,6 +32,10 @@ use Psr\Http\Message\StreamFactoryInterface;
 use Symfony\Component\Serializer\Exception\ExceptionInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class BasketAppClient implements BasketAppClientInterface
 {
     /**

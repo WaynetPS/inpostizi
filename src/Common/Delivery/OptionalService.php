@@ -6,6 +6,10 @@ namespace izi\prestashop\Common\Delivery;
 
 use izi\prestashop\Common\Price;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class OptionalService implements \JsonSerializable
 {
     /**

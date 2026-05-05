@@ -7,6 +7,10 @@ namespace izi\prestashop\Configuration\Initializer;
 use izi\prestashop\View\Asset\AssetManagerInterface;
 use Symfony\Component\Asset\Packages;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class AssetPackageInitializer implements ConfigurationInitializerInterface
 {
     /**

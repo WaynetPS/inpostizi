@@ -6,6 +6,10 @@ namespace izi\prestashop\Common\Order;
 
 use izi\prestashop\Enum\StringEnum;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @method static self OrderCompleted()
  * @method static self OrderRejected()

@@ -7,6 +7,10 @@ namespace izi\prestashop\MerchantApi\Model\Order\Request;
 use izi\prestashop\Common\Customer\InvoiceDetails;
 use izi\prestashop\Common\Order\Consent;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CreateOrderRequest implements \JsonSerializable
 {
     /**

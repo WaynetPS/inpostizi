@@ -19,6 +19,10 @@ use izi\prestashop\OAuth2\UriCollectionInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class AuthorizationProviderFactory implements AuthorizationProviderFactoryInterface
 {
     /**

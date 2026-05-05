@@ -9,6 +9,10 @@ use izi\prestashop\ObjectModel\Repository\ObjectRepositoryInterface;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ImageTypeChoiceType extends AbstractType
 {
     public function configureOptions(OptionsResolver $resolver): void

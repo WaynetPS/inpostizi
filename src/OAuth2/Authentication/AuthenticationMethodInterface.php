@@ -6,6 +6,10 @@ namespace izi\prestashop\OAuth2\Authentication;
 
 use Psr\Http\Message\RequestInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface AuthenticationMethodInterface
 {
     public function getIdentifier(): string;

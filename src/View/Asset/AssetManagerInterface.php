@@ -6,6 +6,10 @@ namespace izi\prestashop\View\Asset;
 
 use Symfony\Component\Asset\PackageInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface AssetManagerInterface
 {
     /**

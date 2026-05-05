@@ -6,6 +6,10 @@ namespace izi\prestashop\OAuth2\Token;
 
 use izi\prestashop\OAuth2\Exception\UnexpectedValueException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class BearerTokenFactory implements AccessTokenFactoryInterface
 {
     use AccessTokenFactoryTrait;

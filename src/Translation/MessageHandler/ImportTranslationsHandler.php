@@ -16,6 +16,10 @@ use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use Symfony\Component\Translation\Loader\LoaderInterface;
 use Symfony\Component\Translation\MessageCatalogue;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ImportTranslationsHandler
 {
     use CommandHandlerTrait;

@@ -7,6 +7,10 @@ namespace izi\prestashop\Translation\Adapter;
 use Symfony\Component\Translation\TranslatorInterface as LegacyTranslatorInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 if (!interface_exists(LegacyTranslatorInterface::class)) {
     throw new \LogicException(\sprintf('You cannot use the "%s" because the "symfony/translation" package already fulfills the "%s" contract. Use "%s" directly instead.', Translator::class, TranslatorInterface::class, \Symfony\Component\Translation\Translator::class));
 }

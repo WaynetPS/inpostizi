@@ -6,6 +6,10 @@ namespace izi\prestashop\Order\Message;
 
 use izi\prestashop\MerchantApi\Model\Order\Request\CreateOrderRequest;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface ParametersExtractorInterface
 {
     /**

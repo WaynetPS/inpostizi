@@ -6,6 +6,10 @@ namespace izi\prestashop\Validator;
 
 use Symfony\Component\Validator\Constraints\Composite;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * Use this constraint to sequentially validate nested constraints.
  * Validation for the nested constraints collection will stop at first violation.

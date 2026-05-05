@@ -6,6 +6,10 @@ namespace izi\prestashop\Clock;
 
 use Psr\Clock\ClockInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class SystemClock implements ClockInterface
 {
     private $timezone;

@@ -6,6 +6,10 @@ namespace izi\prestashop\Configuration\DTO;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class HtmlStyles implements \IteratorAggregate, \JsonSerializable
 {
     /**

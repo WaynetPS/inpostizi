@@ -7,6 +7,10 @@ namespace izi\prestashop\Hook\Legacy;
 use izi\prestashop\Module\Exception\PrestaShopModuleErrorException;
 use Symfony\Component\Form\FormInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ControllerHelper
 {
     private function __construct()

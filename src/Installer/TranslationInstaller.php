@@ -9,6 +9,10 @@ use izi\prestashop\Installer\Exception\InstallerException;
 use izi\prestashop\Translation\Message\ImportTranslationsCommand;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class TranslationInstaller implements InstallerInterface
 {
     /**

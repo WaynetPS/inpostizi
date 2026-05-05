@@ -13,6 +13,10 @@ use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\HttpClient\Psr18Client;
 use Symfony\Contracts\Service\ServiceSubscriberInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ClientFactory implements ClientFactoryInterface, ServiceSubscriberInterface
 {
     private const DEFAULT_OPTIONS = [

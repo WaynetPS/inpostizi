@@ -12,6 +12,10 @@ use izi\prestashop\View\Templating\RendererInterface;
 use PrestaShop\PrestaShop\Core\Module\WidgetInterface;
 use Symfony\Component\HttpFoundation\Request;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class DisplayIziCheckoutButton implements HookInterface
 {
     use ButtonWidgetRendererTrait;

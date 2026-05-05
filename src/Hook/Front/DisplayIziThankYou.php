@@ -9,6 +9,10 @@ use izi\prestashop\Hook\Exception\InvalidHookParamException;
 use izi\prestashop\Hook\HookInterface;
 use PrestaShop\PrestaShop\Adapter\Presenter\Order\OrderLazyArray;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class DisplayIziThankYou implements HookInterface
 {
     use ThankYouWidgetRendererTrait;

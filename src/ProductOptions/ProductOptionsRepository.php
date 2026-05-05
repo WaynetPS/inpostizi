@@ -7,6 +7,10 @@ namespace izi\prestashop\ProductOptions;
 use izi\prestashop\Database\Connection;
 use izi\prestashop\Product\Image\ImageGalleryType;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class ProductOptionsRepository implements ProductOptionsRepositoryInterface
 {
     public const TABLE_NAME = 'inpostizi_product_options';

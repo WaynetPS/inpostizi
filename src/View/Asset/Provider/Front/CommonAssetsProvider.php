@@ -8,6 +8,10 @@ use izi\prestashop\Environment\EnvironmentInterface;
 use izi\prestashop\View\Asset\Provider\AssetsProviderInterface;
 use izi\prestashop\View\Asset\Provider\DTO\Assets;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CommonAssetsProvider implements AssetsProviderInterface
 {
     /**

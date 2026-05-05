@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace InPost\Izi\Upgrade;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 trait ConfigUpdaterTrait
 {
     /**

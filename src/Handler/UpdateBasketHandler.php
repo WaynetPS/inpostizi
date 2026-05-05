@@ -14,6 +14,10 @@ use izi\prestashop\Entities\BasketSession;
 use izi\prestashop\Repository\BasketSessionRepositoryInterface;
 use Psr\Log\LoggerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UpdateBasketHandler implements UpdateBasketHandlerInterface
 {
     use CommandHandlerTrait;

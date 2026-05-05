@@ -8,6 +8,10 @@ use izi\prestashop\Common\Basket\Notice;
 use izi\prestashop\Entities\BasketInterface;
 use izi\prestashop\MerchantApi\Model\Basket\Request\BasketEvent;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface BasketEventHandlerInterface
 {
     public function handle(BasketInterface $basket, BasketEvent $event): ?Notice;

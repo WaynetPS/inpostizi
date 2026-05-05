@@ -6,6 +6,10 @@ namespace izi\prestashop\ObjectModel\Repository;
 
 use izi\prestashop\ObjectModel\ObjectManagerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @extends ObjectRepository<\Hook>
  */

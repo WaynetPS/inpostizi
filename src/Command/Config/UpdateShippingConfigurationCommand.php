@@ -7,6 +7,10 @@ namespace izi\prestashop\Command\Config;
 use izi\prestashop\Configuration\ShippingConfigurationInterface;
 use izi\prestashop\Handler\Config\UpdateShippingConfigurationHandler;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @see UpdateShippingConfigurationHandler
  */

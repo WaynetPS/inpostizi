@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Installer;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Installer implements InstallerInterface, UninstallerInterface
 {
     /**

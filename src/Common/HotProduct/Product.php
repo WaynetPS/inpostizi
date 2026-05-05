@@ -9,6 +9,10 @@ use izi\prestashop\Common\Price;
 use izi\prestashop\Common\Product\ProductAttribute;
 use izi\prestashop\Common\Product\ProductImage;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Product implements \JsonSerializable
 {
     use ProductTrait;

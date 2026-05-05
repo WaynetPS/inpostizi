@@ -8,6 +8,10 @@ use izi\prestashop\PromoCode\Exception\CouldNotAddPromoCodeException;
 use izi\prestashop\PromoCode\Exception\CouldNotRemovePromoCodeException;
 use izi\prestashop\PromoCode\Exception\InvalidPromoCodeException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface PromoCodeManagerInterface
 {
     /**

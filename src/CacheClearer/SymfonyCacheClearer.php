@@ -7,6 +7,10 @@ namespace izi\prestashop\CacheClearer;
 use PrestaShop\PrestaShop\Adapter\SymfonyContainer;
 use Symfony\Component\Filesystem\Filesystem;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class SymfonyCacheClearer implements CacheClearerInterface
 {
     private const LEGACY_CONTAINER_FILES = [

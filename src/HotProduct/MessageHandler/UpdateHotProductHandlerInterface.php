@@ -7,6 +7,10 @@ namespace izi\prestashop\HotProduct\MessageHandler;
 use izi\prestashop\BasketApp\Product\Response\Status;
 use izi\prestashop\HotProduct\Message\UpdateHotProductCommand;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface UpdateHotProductHandlerInterface
 {
     public function __invoke(UpdateHotProductCommand $command): Status;

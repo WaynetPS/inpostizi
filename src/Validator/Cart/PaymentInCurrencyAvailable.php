@@ -7,6 +7,10 @@ namespace izi\prestashop\Validator\Cart;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Exception\InvalidArgumentException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class PaymentInCurrencyAvailable extends Constraint
 {
     /**

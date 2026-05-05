@@ -8,6 +8,10 @@ use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
 use Psr\Log\NullLogger;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @experimental
  *

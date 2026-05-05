@@ -8,6 +8,10 @@ use izi\prestashop\Configuration\GeneralConfigurationInterface;
 use izi\prestashop\Configuration\PromoCodesConfigurationInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class GeneralConfiguration implements GeneralConfigurationInterface, PromoCodesConfigurationInterface
 {
     /**

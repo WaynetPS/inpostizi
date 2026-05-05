@@ -10,6 +10,10 @@ use izi\prestashop\MerchantApi\Exception\BasketNotFoundException;
 use izi\prestashop\MerchantApi\Model\Basket\Response\Basket;
 use izi\prestashop\Repository\BasketSessionRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class GetBasketHandler implements GetBasketHandlerInterface
 {
     /**

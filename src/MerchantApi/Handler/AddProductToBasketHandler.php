@@ -29,6 +29,10 @@ use izi\prestashop\MerchantApi\Model\Basket\Response\IdentifiableBasket;
 use izi\prestashop\Product\ReferenceId;
 use izi\prestashop\Repository\BasketSessionRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class AddProductToBasketHandler implements AddProductToBasketHandlerInterface
 {
     use CommandHandlerTrait;

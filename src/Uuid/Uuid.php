@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Uuid;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 abstract class Uuid implements \JsonSerializable
 {
     public const CANONICAL_FORMAT_LENGTH = 36;

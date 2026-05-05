@@ -10,6 +10,10 @@ use izi\prestashop\Handler\CommandHandlerTrait;
 use izi\prestashop\HotProduct\HotProductRepositoryInterface;
 use izi\prestashop\HotProduct\Message\DeleteRemoteProductCommand;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class DeleteRemoteProductHandler implements DeleteRemoteProductHandlerInterface
 {
     use CommandHandlerTrait;

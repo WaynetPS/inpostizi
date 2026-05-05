@@ -12,6 +12,10 @@ use izi\prestashop\ObjectModel\Entity\InPostIziBasketSession;
 use izi\prestashop\Uuid\Uuid;
 use Symfony\Component\Serializer\SerializerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @implements SwitchableBasketSessionInterface<Cart>
  */

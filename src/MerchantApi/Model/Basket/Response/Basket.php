@@ -12,6 +12,10 @@ use izi\prestashop\Common\Basket\Product;
 use izi\prestashop\Common\Basket\Summary;
 use izi\prestashop\Common\PromoCode;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Basket implements \JsonSerializable
 {
     use BasketTrait;

@@ -17,6 +17,10 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class AuthorizationServerClient implements AuthorizationServerClientInterface
 {
     /**

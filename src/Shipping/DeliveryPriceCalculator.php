@@ -13,6 +13,10 @@ use izi\prestashop\Currency\PriceConverterInterface;
 use izi\prestashop\ObjectModel\Repository\ObjectRepositoryInterface;
 use izi\prestashop\Shipping\Exception\UnavailableDeliveryOptionException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class DeliveryPriceCalculator implements DeliveryPriceCalculatorInterface
 {
     /**

@@ -8,6 +8,10 @@ use izi\prestashop\Analytics\Cookie\Factory\CookieFactoryInterface;
 use izi\prestashop\Analytics\Cookie\Repository\CookieRepositoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class GenericClickIdExtractor implements CookieExtractorInterface, CookiePersisterInterface, CookieEraserInterface
 {
     private const DEFAULT_OPTIONS = [

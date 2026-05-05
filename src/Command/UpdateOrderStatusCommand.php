@@ -7,6 +7,10 @@ namespace izi\prestashop\Command;
 use izi\prestashop\Common\Order\MerchantOrderStatus;
 use izi\prestashop\Handler\UpdateOrderStatusHandler;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @see UpdateOrderStatusHandler
  */

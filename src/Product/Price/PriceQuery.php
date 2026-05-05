@@ -6,6 +6,10 @@ namespace izi\prestashop\Product\Price;
 
 use izi\prestashop\Common\Currency;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class PriceQuery
 {
     /**

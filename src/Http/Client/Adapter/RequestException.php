@@ -8,6 +8,10 @@ use GuzzleHttp\Exception\TransferException;
 use Psr\Http\Client\RequestExceptionInterface;
 use Psr\Http\Message\RequestInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class RequestException extends \InvalidArgumentException implements RequestExceptionInterface
 {
     private $request;

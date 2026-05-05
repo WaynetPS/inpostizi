@@ -6,6 +6,10 @@ namespace izi\prestashop\View\Component;
 
 use Symfony\Component\HttpFoundation\Request;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class NavItem
 {
     /**

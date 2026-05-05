@@ -13,6 +13,10 @@ use izi\prestashop\MerchantApi\Model\Order\Response\Order;
 use izi\prestashop\Repository\BasketSessionRepositoryInterface;
 use izi\prestashop\rest\order\Create;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @internal expect constructor signature to change
  */

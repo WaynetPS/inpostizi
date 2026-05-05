@@ -8,6 +8,10 @@ use izi\prestashop\Clock\SystemClock;
 use izi\prestashop\OAuth2\Exception\UnexpectedValueException;
 use Psr\Clock\ClockInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @mixin AccessTokenFactoryInterface
  */

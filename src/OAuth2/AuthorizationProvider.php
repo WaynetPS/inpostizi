@@ -16,6 +16,10 @@ use izi\prestashop\OAuth2\Token\InMemoryTokenRepository;
 use Psr\Clock\ClockInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class AuthorizationProvider implements AuthorizationProviderInterface
 {
     /**

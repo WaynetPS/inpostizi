@@ -6,6 +6,10 @@ namespace izi\prestashop\Analytics;
 
 use izi\prestashop\Database\Connection;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class BasketAnalyticsRepository implements BasketAnalyticsRepositoryInterface
 {
     public const TABLE_NAME = 'inpostizi_basket_analytics';

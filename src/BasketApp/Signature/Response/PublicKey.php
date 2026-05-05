@@ -7,6 +7,10 @@ namespace izi\prestashop\BasketApp\Signature\Response;
 use izi\prestashop\Serializer\Normalizer\DenormalizableInterface;
 use Symfony\Component\Serializer\Exception\UnexpectedValueException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class PublicKey implements \JsonSerializable, DenormalizableInterface
 {
     /**

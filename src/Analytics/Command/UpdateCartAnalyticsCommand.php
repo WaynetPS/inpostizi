@@ -6,6 +6,10 @@ namespace izi\prestashop\Analytics\Command;
 
 use izi\prestashop\Analytics\BasketAnalyticsInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @see UpdateCartAnalyticsHandler
  */

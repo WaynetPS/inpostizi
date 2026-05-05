@@ -2,6 +2,10 @@
 
 namespace izi\prestashop\Event;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ValidateOrderEvent extends Event
 {
     /**

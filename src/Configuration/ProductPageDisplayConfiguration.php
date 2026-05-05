@@ -11,6 +11,10 @@ use PrestaShop\PrestaShop\Adapter\Presenter\Product\ProductLazyArray;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ProductPageDisplayConfiguration implements ProductAwareWidgetDisplayConfigurationInterface
 {
     /**

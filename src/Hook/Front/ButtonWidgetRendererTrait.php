@@ -8,6 +8,10 @@ use izi\prestashop\Common\BindingPlace;
 use izi\prestashop\Configuration\GuiConfigurationInterface;
 use PrestaShop\PrestaShop\Core\Module\WidgetInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 trait ButtonWidgetRendererTrait
 {
     /**

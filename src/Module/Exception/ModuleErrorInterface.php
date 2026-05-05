@@ -6,6 +6,10 @@ namespace izi\prestashop\Module\Exception;
 
 use PrestaShop\PrestaShop\Core\Module\Exception\ModuleErrorInterface as BaseModuleErrorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 if (interface_exists(BaseModuleErrorInterface::class)) {
     interface ModuleErrorInterface extends BaseModuleErrorInterface
     {

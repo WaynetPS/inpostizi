@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\MerchantApi\Exception;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class InternalServerErrorException extends ApiException
 {
     public const ERROR_CODE = 'INTERNAL_SERVER_ERROR';

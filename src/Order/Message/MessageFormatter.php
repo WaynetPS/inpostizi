@@ -7,6 +7,10 @@ namespace izi\prestashop\Order\Message;
 use izi\prestashop\MerchantApi\Model\Order\Request\CreateOrderRequest;
 use izi\prestashop\Order\Message\Processor\ProcessorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class MessageFormatter implements MessageFormatterInterface
 {
     /**

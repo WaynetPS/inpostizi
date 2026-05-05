@@ -11,6 +11,10 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class InpostIziCartModuleFrontController extends ModuleFrontController
 {
     /**

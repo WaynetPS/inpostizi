@@ -12,6 +12,10 @@ use Monolog\Logger;
 use Monolog\Processor\PsrLogMessageProcessor;
 use Psr\Log\LoggerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class MonologLoggerFactory implements LoggerFactoryInterface
 {
     private static $decoratePsrProcessor;

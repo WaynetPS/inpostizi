@@ -9,6 +9,10 @@ use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Exception\UnexpectedValueException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @author Yevgeniy Zholkevskiy <zhenya.zholkevskiy@gmail.com>
  */

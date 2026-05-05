@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Event;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @method addListener(string $eventName, callable $listener, int $priority = 0)
  * @method removeListener(string $eventName, callable $listener)

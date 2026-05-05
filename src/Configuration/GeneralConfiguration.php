@@ -8,6 +8,10 @@ use izi\prestashop\Hook\Front\DisplayCheckoutSummaryTop;
 use izi\prestashop\Hook\Front\DisplayPaymentReturn;
 use izi\prestashop\Hook\Front\DisplayProductActions;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @implements PersistentConfigurationInterface<GeneralConfigurationInterface&PromoCodesConfigurationInterface>
  */

@@ -6,6 +6,10 @@ namespace izi\prestashop\Installer;
 
 use Psr\Log\LoggerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class LoggingInstaller implements InstallerInterface, UninstallerInterface
 {
     /**

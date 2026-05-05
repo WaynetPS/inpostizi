@@ -9,6 +9,10 @@ use izi\prestashop\ObjectModel\Exception\InvalidDataException;
 use izi\prestashop\ObjectModel\Repository\ObjectRepositoryFactoryInterface;
 use izi\prestashop\ObjectModel\Repository\ObjectRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ObjectManager implements ObjectManagerInterface
 {
     /**

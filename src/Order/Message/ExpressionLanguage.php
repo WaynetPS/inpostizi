@@ -6,6 +6,10 @@ namespace izi\prestashop\Order\Message;
 
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage as BaseExpressionLanguage;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class ExpressionLanguage extends BaseExpressionLanguage
 {
     protected function registerFunctions(): void

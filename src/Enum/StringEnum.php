@@ -2,6 +2,10 @@
 
 namespace izi\prestashop\Enum;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @extends Enum<string>
  */

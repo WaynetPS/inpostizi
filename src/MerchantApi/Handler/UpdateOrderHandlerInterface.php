@@ -7,6 +7,10 @@ namespace izi\prestashop\MerchantApi\Handler;
 use izi\prestashop\MerchantApi\Command\UpdateOrderCommand;
 use izi\prestashop\MerchantApi\Model\Order\Response\OrderStatusData;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface UpdateOrderHandlerInterface
 {
     public function __invoke(UpdateOrderCommand $command): OrderStatusData;

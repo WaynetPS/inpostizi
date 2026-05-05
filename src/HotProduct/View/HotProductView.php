@@ -9,6 +9,10 @@ use izi\prestashop\BasketApp\Product\Response\Status;
 use izi\prestashop\Common\Product\ProductAttribute;
 use izi\prestashop\HotProduct\HotProduct;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class HotProductView
 {
     /**

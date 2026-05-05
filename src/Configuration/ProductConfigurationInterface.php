@@ -6,6 +6,10 @@ namespace izi\prestashop\Configuration;
 
 use izi\prestashop\Product\Image\ImageGalleryType;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface ProductConfigurationInterface
 {
     public function getNormalImageTypeId(?int $shopId = null): ?int;

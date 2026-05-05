@@ -6,6 +6,10 @@ namespace izi\prestashop\CacheClearer;
 
 use izi\prestashop\Repository\BasketSessionRepository;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class BindingKeysCacheClearer implements CacheClearerInterface
 {
     /**

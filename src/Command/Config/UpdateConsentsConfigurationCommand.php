@@ -12,6 +12,10 @@ use izi\prestashop\Handler\Config\UpdateConsentsConfigurationHandler;
 use izi\prestashop\Validator\Unique;
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @see UpdateConsentsConfigurationHandler
  */

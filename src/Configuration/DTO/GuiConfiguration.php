@@ -9,6 +9,10 @@ use izi\prestashop\Configuration\GuiConfigurationInterface;
 use izi\prestashop\Configuration\WidgetDisplayConfigurationInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class GuiConfiguration implements GuiConfigurationInterface, \ArrayAccess
 {
     /**

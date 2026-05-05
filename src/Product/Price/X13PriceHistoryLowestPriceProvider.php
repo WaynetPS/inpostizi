@@ -5,6 +5,10 @@ namespace izi\prestashop\Product\Price;
 use izi\prestashop\Builder\PriceFactory;
 use izi\prestashop\Common\Price;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * Adapter for "x13pricehistory" module version ^1.5.0.
  *

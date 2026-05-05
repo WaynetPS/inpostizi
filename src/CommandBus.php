@@ -6,6 +6,10 @@ namespace izi\prestashop;
 
 use Psr\Container\ContainerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CommandBus implements CommandBusInterface
 {
     /**

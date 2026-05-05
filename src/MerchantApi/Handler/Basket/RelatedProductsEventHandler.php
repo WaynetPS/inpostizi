@@ -19,6 +19,10 @@ use izi\prestashop\MerchantApi\Model\Basket\Request\RelatedProductData;
 use izi\prestashop\Product\ReferenceId;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class RelatedProductsEventHandler implements BasketEventHandlerInterface
 {
     /**

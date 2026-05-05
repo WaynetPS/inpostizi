@@ -9,6 +9,10 @@ use izi\prestashop\Handler\CommandHandlerTrait;
 use izi\prestashop\PromoCode\CartRuleOptions;
 use izi\prestashop\PromoCode\CartRuleOptionsRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UpdateCartRuleOptionsHandler implements UpdateCartRuleOptionsHandlerInterface
 {
     use CommandHandlerTrait;

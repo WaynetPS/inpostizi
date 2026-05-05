@@ -15,6 +15,10 @@ use izi\prestashop\MerchantApi\Model\Basket\Request\BasketEvent;
 use izi\prestashop\MerchantApi\Model\Basket\Request\EventType;
 use Psr\Container\ContainerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class BasketEventHandler implements BasketEventHandlerInterface, ServiceSubscriberInterface
 {
     /**

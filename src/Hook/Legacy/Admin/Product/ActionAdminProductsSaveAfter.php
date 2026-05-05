@@ -16,6 +16,10 @@ use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ActionAdminProductsSaveAfter implements PrestaShopVersionAwareHookInterface
 {
     public const HOOK_NAME = 'actionAdminProductsControllerSaveAfter';

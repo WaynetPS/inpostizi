@@ -7,6 +7,10 @@ namespace izi\prestashop\Command;
 use izi\prestashop\Entities\BasketInterface;
 use izi\prestashop\Handler\GetBasketBindingKeyHandler;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @see GetBasketBindingKeyHandler
  */

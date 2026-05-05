@@ -6,6 +6,10 @@ namespace izi\prestashop\BasketApp\Order\Request;
 
 use izi\prestashop\Common\Order\MerchantOrderStatus;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class OrderEventData implements \JsonSerializable
 {
     /**

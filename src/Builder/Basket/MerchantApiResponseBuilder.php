@@ -12,6 +12,10 @@ use izi\prestashop\Common\Basket\Summary;
 use izi\prestashop\Common\PromoCode;
 use izi\prestashop\MerchantApi\Model\Basket\Response\Basket;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class MerchantApiResponseBuilder extends AbstractBasketBuilder implements MerchantApiResponseBuilderInterface
 {
     public function build(): Basket

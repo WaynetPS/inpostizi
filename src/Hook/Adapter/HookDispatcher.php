@@ -6,6 +6,10 @@ namespace izi\prestashop\Hook\Adapter;
 
 use izi\prestashop\Hook\HookDispatcherInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class HookDispatcher implements HookDispatcherInterface
 {
     public function dispatch(string $name, array $parameters, ?int $shopId = null)

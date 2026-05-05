@@ -6,6 +6,10 @@ namespace izi\prestashop\MerchantApi\Model\Order\Request;
 
 use izi\prestashop\Enum\StringEnum;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @method static self OrderRejected()
  */

@@ -8,6 +8,10 @@ use Symfony\Component\Serializer\Exception\InvalidArgumentException;
 use Symfony\Component\Serializer\Exception\UnexpectedValueException;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CustomDenormalizer implements DenormalizerInterface
 {
     /**

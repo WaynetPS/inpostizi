@@ -8,6 +8,10 @@ use izi\prestashop\BasketApp\Exception\PublicKeyNotFoundException;
 use izi\prestashop\BasketApp\Signature\Response\SigningKey;
 use izi\prestashop\BasketApp\Signature\Response\SigningKeys;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface SigningKeysApiClientInterface
 {
     /**

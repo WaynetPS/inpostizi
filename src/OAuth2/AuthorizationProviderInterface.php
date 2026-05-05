@@ -7,6 +7,10 @@ namespace izi\prestashop\OAuth2;
 use izi\prestashop\OAuth2\Token\AccessTokenInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface AuthorizationProviderInterface
 {
     /**

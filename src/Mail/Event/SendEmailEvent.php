@@ -6,6 +6,10 @@ namespace izi\prestashop\Mail\Event;
 
 use izi\prestashop\Event\Event;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class SendEmailEvent extends Event
 {
     /**

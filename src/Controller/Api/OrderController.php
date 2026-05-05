@@ -16,6 +16,10 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class OrderController extends AbstractApiController
 {
     public function create(Request $request): JsonResponse

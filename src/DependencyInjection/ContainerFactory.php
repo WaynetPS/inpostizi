@@ -19,6 +19,10 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\DependencyInjection\ParameterBag\EnvPlaceholderParameterBag;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ContainerFactory
 {
     /**

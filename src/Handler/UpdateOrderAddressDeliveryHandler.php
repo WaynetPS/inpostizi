@@ -12,6 +12,10 @@ use izi\prestashop\ObjectModel\ObjectManagerInterface;
 use izi\prestashop\Order\Address\AddressDataMapper;
 use izi\prestashop\Repository\BasketSessionRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UpdateOrderAddressDeliveryHandler implements UpdateOrderAddressDeliveryHandlerInterface
 {
     use CommandHandlerTrait;

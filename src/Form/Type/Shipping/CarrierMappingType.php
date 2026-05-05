@@ -11,6 +11,10 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CarrierMappingType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void

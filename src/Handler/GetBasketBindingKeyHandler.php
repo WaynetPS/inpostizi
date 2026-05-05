@@ -12,6 +12,10 @@ use izi\prestashop\Entities\BasketSessionInterface;
 use izi\prestashop\Handler\Result\BasketBindingKey;
 use izi\prestashop\Repository\BasketSessionRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class GetBasketBindingKeyHandler implements GetBasketBindingKeyHandlerInterface
 {
     use CommandHandlerTrait;

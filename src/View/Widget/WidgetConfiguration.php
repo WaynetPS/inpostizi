@@ -7,6 +7,10 @@ namespace izi\prestashop\View\Widget;
 use izi\prestashop\Common\BindingPlace;
 use Symfony\Component\Validator\Constraints as Assert;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class WidgetConfiguration implements WidgetConfigurationInterface
 {
     public const WIDTH_MIN_PX = 220;

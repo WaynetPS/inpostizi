@@ -9,6 +9,10 @@ use izi\prestashop\Hook\Front\Event\RenderHeaderEvent;
 use izi\prestashop\Hook\HookInterface;
 use Symfony\Component\HttpFoundation\Request;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class DisplayHeader implements HookInterface
 {
     public const HOOK_NAME = 'displayHeader';

@@ -6,6 +6,10 @@ namespace izi\prestashop\Analytics\Cookie\Repository;
 
 use Symfony\Component\HttpFoundation\Cookie;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface CookieRepositoryInterface
 {
     public function persist(Cookie $cookie): void;

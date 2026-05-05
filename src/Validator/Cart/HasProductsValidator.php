@@ -8,6 +8,10 @@ use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class HasProductsValidator extends ConstraintValidator
 {
     public function validate($value, Constraint $constraint): void

@@ -10,6 +10,10 @@ use izi\prestashop\ObjectModel\Repository\CarrierRepository;
 use izi\prestashop\ObjectModel\Repository\ObjectRepositoryInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class DeliveryOptionsStatusChecker implements StatusCheckerInterface
 {
     /**

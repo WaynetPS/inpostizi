@@ -7,6 +7,10 @@ namespace izi\prestashop\MerchantApi\Model\Basket\Request;
 use izi\prestashop\BasketApp\Basket\Response\BasketBindingResponse;
 use izi\prestashop\Common\PhoneNumber;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class BindingConfirmation implements \JsonSerializable, \Stringable
 {
     /**

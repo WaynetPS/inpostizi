@@ -6,6 +6,10 @@ namespace izi\prestashop\Common\Customer;
 
 use izi\prestashop\Enum\StringEnum;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @method static self Person()
  * @method static self Company()

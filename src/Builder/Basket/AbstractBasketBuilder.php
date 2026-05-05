@@ -42,6 +42,10 @@ use izi\prestashop\PromoCode\PromoCodeProviderInterface;
 use izi\prestashop\Validator\Product\Unrestricted;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @todo split into separate services
  */

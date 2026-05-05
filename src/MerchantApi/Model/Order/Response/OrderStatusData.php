@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\MerchantApi\Model\Order\Response;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class OrderStatusData implements \JsonSerializable
 {
     /**

@@ -10,6 +10,10 @@ use izi\prestashop\PromoCode\Exception\CouldNotRemovePromoCodeException;
 use izi\prestashop\PromoCode\Exception\InvalidPromoCodeException;
 use izi\prestashop\PromoCode\Exception\PromoCodeNotFoundException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CartRuleManager implements PromoCodeManagerInterface
 {
     /**

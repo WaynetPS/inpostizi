@@ -6,6 +6,10 @@ namespace izi\prestashop\MerchantApi\Model\Basket\Request;
 
 use izi\prestashop\Common\PhoneNumber;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class BasketId implements \JsonSerializable
 {
     /**

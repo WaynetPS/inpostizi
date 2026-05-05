@@ -9,6 +9,10 @@ use izi\prestashop\ProductOptions\Message\UpdateProductOptionsCommand;
 use izi\prestashop\ProductOptions\ProductOptions;
 use izi\prestashop\ProductOptions\ProductOptionsRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UpdateProductOptionsHandler implements UpdateProductOptionsHandlerInterface
 {
     use CommandHandlerTrait;

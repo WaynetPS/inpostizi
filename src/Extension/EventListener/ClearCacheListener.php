@@ -9,6 +9,10 @@ use izi\prestashop\Extension\Event\ExtensionEvent;
 use izi\prestashop\Hook\VersionRange;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ClearCacheListener implements EventSubscriberInterface
 {
     /**

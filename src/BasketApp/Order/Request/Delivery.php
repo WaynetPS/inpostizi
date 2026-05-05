@@ -7,6 +7,10 @@ namespace izi\prestashop\BasketApp\Order\Request;
 use izi\prestashop\Common\Order\DeliveryAddress;
 use izi\prestashop\Common\PhoneNumber;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Delivery implements \JsonSerializable
 {
     /**

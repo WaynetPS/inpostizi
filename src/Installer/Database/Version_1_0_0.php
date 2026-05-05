@@ -6,6 +6,10 @@ namespace izi\prestashop\Installer\Database;
 
 use izi\prestashop\ObjectModel\Entity\InPostIziBasketSession;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * initial DB schema
  */

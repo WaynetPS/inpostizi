@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Shipping\ProductRestriction;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ProductRestrictionDelivery implements ProductRestrictionDeliveryInterface
 {
     public function isShippingAvailableBasedOnProductCarrierRestriction(\Carrier $carrier, \Product $product): bool

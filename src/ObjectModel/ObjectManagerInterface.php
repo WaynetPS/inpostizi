@@ -7,6 +7,10 @@ namespace izi\prestashop\ObjectModel;
 use izi\prestashop\Database\Connection;
 use izi\prestashop\ObjectModel\Repository\ObjectRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface ObjectManagerInterface
 {
     public function getConnection(): Connection;

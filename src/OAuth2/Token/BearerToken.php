@@ -6,6 +6,10 @@ namespace izi\prestashop\OAuth2\Token;
 
 use Psr\Http\Message\RequestInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class BearerToken implements AccessTokenInterface
 {
     use AccessTokenTrait;

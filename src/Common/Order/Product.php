@@ -10,6 +10,10 @@ use izi\prestashop\Common\Product\ProductImage;
 use izi\prestashop\Common\Product\ProductType;
 use izi\prestashop\Common\Product\ProductVariant;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Product implements \JsonSerializable
 {
     /**

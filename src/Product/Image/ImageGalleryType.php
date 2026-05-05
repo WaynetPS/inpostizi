@@ -8,6 +8,10 @@ use izi\prestashop\Enum\IntEnum;
 use izi\prestashop\Translation\TranslatableInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @method static self AllImages()
  * @method static self OnlyCoverImage()

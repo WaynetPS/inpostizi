@@ -11,6 +11,10 @@ use izi\prestashop\MerchantApi\Model\Order\Request\CreateOrderRequest;
 use izi\prestashop\ObjectModel\ObjectManagerInterface;
 use izi\prestashop\Order\Message\MessageFormatterInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UpdateCartMessageHandler implements UpdateCartMessageHandlerInterface
 {
     use CommandHandlerTrait;

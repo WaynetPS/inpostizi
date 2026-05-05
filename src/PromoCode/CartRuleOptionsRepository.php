@@ -8,6 +8,10 @@ use izi\prestashop\Configuration\Adapter\Configuration;
 use izi\prestashop\Configuration\ShopAwareConfigurationInterface;
 use izi\prestashop\Database\Connection;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CartRuleOptionsRepository implements CartRuleOptionsRepositoryInterface
 {
     public const TABLE_NAME = 'inpostizi_cart_rule';

@@ -8,6 +8,10 @@ use izi\prestashop\Common\Weight;
 use izi\prestashop\ObjectModel\Repository\ObjectRepositoryInterface;
 use izi\prestashop\ObjectModel\Repository\RangeWeightRepository;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class WeightRangeStrategy implements CartWeightDeliveryStrategyInterface
 {
     /**

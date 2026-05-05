@@ -9,6 +9,10 @@ use izi\prestashop\ObjectModel\Repository\ObjectRepositoryInterface;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\TransformationFailedException;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CombinationToAttributeIdsTransformer implements DataTransformerInterface
 {
     /**

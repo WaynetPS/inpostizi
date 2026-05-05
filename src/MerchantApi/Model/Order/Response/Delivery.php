@@ -10,6 +10,10 @@ use izi\prestashop\Common\Order\DeliveryAddress;
 use izi\prestashop\Common\PhoneNumber;
 use izi\prestashop\Common\Price;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Delivery implements \JsonSerializable
 {
     /**

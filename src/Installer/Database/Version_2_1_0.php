@@ -8,6 +8,10 @@ use izi\prestashop\HotProduct\HotProductRepository;
 use izi\prestashop\PromoCode\CartRuleOptionsRepository;
 use izi\prestashop\Repository\ProductRestrictionsRepository;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Version_2_1_0 extends AbstractMigration
 {
     private const HP_PRODUCT_ID_FK = HotProductRepository::TABLE_NAME . '-product_id';

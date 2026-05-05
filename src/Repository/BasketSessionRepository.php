@@ -14,6 +14,10 @@ use izi\prestashop\ObjectModel\ObjectManagerInterface;
 use izi\prestashop\Uuid\Uuid;
 use Symfony\Component\Serializer\SerializerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @implements BasketSessionRepositoryInterface<BasketSession>
  */

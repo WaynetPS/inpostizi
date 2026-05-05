@@ -9,6 +9,10 @@ use izi\prestashop\Common\Delivery\OptionalService;
 use izi\prestashop\Common\Price;
 use izi\prestashop\Common\PriceAmount;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class DeliveryOption implements \JsonSerializable
 {
     /**

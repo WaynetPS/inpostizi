@@ -12,6 +12,10 @@ use izi\prestashop\ProductOptions\Message\UpdateProductOptionsCommand;
 use izi\prestashop\ProductOptions\ProductOptionsRepositoryInterface;
 use Symfony\Component\Form\FormBuilderInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ActionProductFormBuilderModifier implements PrestaShopVersionAwareHookInterface
 {
     public const HOOK_NAME = 'actionProductFormBuilderModifier';

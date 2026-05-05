@@ -6,6 +6,10 @@ namespace izi\prestashop\Shipping\FreeDelivery;
 
 use izi\prestashop\Configuration\PrestaShopConfiguration;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class GenericStrategy implements MinAmountCalculationStrategyInterface
 {
     /**

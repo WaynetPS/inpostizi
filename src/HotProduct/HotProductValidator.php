@@ -10,6 +10,10 @@ use izi\prestashop\ObjectModel\Repository\ProductRepository;
 use izi\prestashop\Product\ProductWithCombination;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class HotProductValidator
 {
     /**

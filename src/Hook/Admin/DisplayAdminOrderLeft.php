@@ -12,6 +12,10 @@ use izi\prestashop\Repository\OrderDataRepositoryInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Twig\Environment;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class DisplayAdminOrderLeft implements PrestaShopVersionAwareHookInterface
 {
     public const HOOK_NAME = 'displayAdminOrderLeft';

@@ -7,6 +7,10 @@ namespace izi\prestashop\Repository;
 use izi\prestashop\Configuration\DTO\Product\ProductRestrictions;
 use izi\prestashop\Database\Connection;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ProductRestrictionsRepository implements ProductRestrictionsRepositoryInterface
 {
     public const CATEGORY_RESTRICTIONS_TABLE = 'inpostizi_prod_category_bl';

@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\View\Templating;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class SmartyRenderer implements RendererInterface
 {
     private $smarty;

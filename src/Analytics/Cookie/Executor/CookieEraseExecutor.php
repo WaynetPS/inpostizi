@@ -7,6 +7,10 @@ namespace izi\prestashop\Analytics\Cookie\Executor;
 use izi\prestashop\Analytics\Cookie\CookieEraserInterface;
 use Symfony\Component\HttpFoundation\Request;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class CookieEraseExecutor implements CookieEraserInterface
 {
     /**

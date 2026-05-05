@@ -11,6 +11,10 @@ use izi\prestashop\Configuration\PersistentConfigurationInterface;
 use izi\prestashop\Handler\CommandHandlerTrait;
 use Psr\Clock\ClockInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UpdateConsentsConfigurationHandler implements UpdateConsentsConfigurationHandlerInterface
 {
     use CommandHandlerTrait;

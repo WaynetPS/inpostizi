@@ -10,6 +10,10 @@ use izi\prestashop\Hook\Front\ActionCartControllerAjaxUpdateResponse;
 use izi\prestashop\Hook\Front\Event\RenderHeaderEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class DetectCartDiscountsUpdateListener implements EventSubscriberInterface
 {
     /**

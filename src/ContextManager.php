@@ -10,6 +10,10 @@ use izi\prestashop\ObjectModel\ObjectManagerInterface;
 use izi\prestashop\ObjectModel\Repository\CurrencyRepository;
 use PrestaShop\PrestaShop\Core\Localization\Locale\RepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ContextManager
 {
     /**

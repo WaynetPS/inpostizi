@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Event;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class OrderEvent extends Event
 {
     public const BEFORE_UPDATE = 'inpostizi.order.before_update';

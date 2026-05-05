@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\BasketApp\Basket\Response;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class BasketBindingResponse implements \JsonSerializable
 {
     /**

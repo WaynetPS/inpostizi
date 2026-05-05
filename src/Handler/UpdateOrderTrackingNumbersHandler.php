@@ -10,6 +10,10 @@ use izi\prestashop\Command\UpdateOrderTrackingNumbersCommand;
 use izi\prestashop\Repository\BasketSessionRepositoryInterface;
 use izi\prestashop\Shipping\TrackingNumberProviderInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UpdateOrderTrackingNumbersHandler implements UpdateOrderTrackingNumbersHandlerInterface
 {
     /**

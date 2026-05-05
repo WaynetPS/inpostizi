@@ -6,6 +6,10 @@ namespace izi\prestashop\View\Widget;
 
 use izi\prestashop\Common\BindingPlace;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @template-extends \IteratorAggregate<string, string> HTML attribute values by name
  */

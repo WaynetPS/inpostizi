@@ -7,6 +7,10 @@ namespace izi\prestashop\MerchantApi\Command;
 use izi\prestashop\MerchantApi\Handler\AddProductToBasketHandler;
 use izi\prestashop\MerchantApi\Model\Basket\Request\BasketId;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * Add a product to a basket with a given ID or create a new basket and add the product.
  *

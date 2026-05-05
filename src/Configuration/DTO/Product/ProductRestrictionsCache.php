@@ -6,6 +6,10 @@ namespace izi\prestashop\Configuration\DTO\Product;
 
 use izi\prestashop\Product\ProductType;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ProductRestrictionsCache implements \JsonSerializable
 {
     /**

@@ -7,6 +7,10 @@ use izi\prestashop\MerchantApi\Model\Order\Request\CreateOrderRequest;
 use izi\prestashop\ObjectModel\Repository\ObjectRepositoryInterface;
 use izi\prestashop\Repository\OrderDataRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class OrderMailRecipientResolver
 {
     /**

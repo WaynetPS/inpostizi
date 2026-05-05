@@ -14,6 +14,10 @@ use PrestaShop\PrestaShop\Core\Module\WidgetInterface;
 use PrestaShop\PrestaShop\Core\Payment\PaymentOption;
 use Symfony\Component\HttpFoundation\Request;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ActionGetPaymentOptions implements HookInterface
 {
     public const HOOK_NAME = 'paymentOptions';

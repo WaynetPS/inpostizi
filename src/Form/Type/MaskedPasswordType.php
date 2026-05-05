@@ -9,6 +9,10 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class MaskedPasswordType extends AbstractType
 {
     public const MASKED_VALUE = '*****';

@@ -6,6 +6,10 @@ namespace izi\prestashop\Product\Event;
 
 use izi\prestashop\Event\Event;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class CombinationEvent extends Event
 {
     /**

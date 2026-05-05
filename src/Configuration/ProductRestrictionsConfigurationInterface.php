@@ -5,6 +5,10 @@ namespace izi\prestashop\Configuration;
 use izi\prestashop\Product\Restriction\RestrictedAction;
 use Symfony\Component\Validator\Constraint;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 interface ProductRestrictionsConfigurationInterface
 {
     /**

@@ -9,6 +9,10 @@ use Monolog\Handler\RotatingFileHandler;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class RotatingFileHandlerFactory extends AbstractHandlerFactory
 {
     public function supports(string $type): bool

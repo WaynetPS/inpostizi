@@ -11,6 +11,10 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\SerializerAwareInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class BasketAppPaginationPageDenormalizer implements DenormalizerInterface, SerializerAwareInterface
 {
     public const ITEM_TYPE_KEY = 'inpost_izi_page_item_type';

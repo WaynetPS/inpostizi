@@ -7,6 +7,10 @@ namespace izi\prestashop\ObjectModel\Repository;
 use izi\prestashop\ObjectModel\ObjectManagerInterface;
 use Psr\Container\ContainerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ObjectRepositoryFactory implements ObjectRepositoryFactoryInterface
 {
     /**

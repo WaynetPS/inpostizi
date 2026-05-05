@@ -8,6 +8,10 @@ use izi\prestashop\ObjectModel\ObjectManagerInterface;
 use izi\prestashop\ObjectModel\QueryBuilder;
 use izi\prestashop\Product\ProductAttribute;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @template T of (\ProductAttribute|\Attribute)
  *

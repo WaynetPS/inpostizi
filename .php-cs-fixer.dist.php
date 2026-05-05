@@ -9,6 +9,7 @@ $config = new class extends PrestaShop\CodingStandards\CsFixer\Config {
             'native_constant_invocation' => ['scope' => 'namespaced'],
             'native_function_invocation' => [
                 'include' => ['@compiler_optimized'],
+                'exclude' => ['defined'],
                 'scope' => 'namespaced',
                 'strict' => true,
             ],

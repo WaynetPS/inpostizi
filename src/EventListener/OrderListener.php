@@ -15,6 +15,10 @@ use izi\prestashop\ObjectModel\Repository\ObjectRepositoryInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class OrderListener implements EventSubscriberInterface
 {
     /**

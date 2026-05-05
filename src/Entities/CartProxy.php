@@ -6,6 +6,10 @@ namespace izi\prestashop\Entities;
 
 use izi\prestashop\ObjectModel\ObjectManagerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @implements BasketInterface<\Cart>
  */

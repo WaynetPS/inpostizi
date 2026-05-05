@@ -13,6 +13,10 @@ use izi\prestashop\MerchantApi\Handler\Basket\BasketEventHandlerInterface;
 use izi\prestashop\MerchantApi\Model\Basket\Response\Basket;
 use izi\prestashop\Repository\BasketSessionRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class UpdateBasketHandler implements UpdateBasketHandlerInterface
 {
     /**

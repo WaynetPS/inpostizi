@@ -7,6 +7,10 @@ namespace izi\prestashop\Hook;
 use izi\prestashop\View\Asset\AssetManagerInterface;
 use izi\prestashop\View\Asset\Provider\AssetsProviderInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 trait AssetRegistryUpdaterTrait
 {
     /**

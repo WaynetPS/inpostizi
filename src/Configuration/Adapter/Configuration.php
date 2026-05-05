@@ -6,6 +6,10 @@ namespace izi\prestashop\Configuration\Adapter;
 
 use izi\prestashop\Configuration\LanguageAwareConfigurationInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class Configuration implements LanguageAwareConfigurationInterface
 {
     /**

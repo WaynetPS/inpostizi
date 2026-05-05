@@ -13,6 +13,10 @@ use PrestaShop\PrestaShop\Adapter\Presenter\Product\ProductLazyArray;
 use PrestaShop\PrestaShop\Core\Module\WidgetInterface;
 use Symfony\Component\HttpFoundation\Request;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class DisplayIziProductButton implements HookInterface
 {
     use ProductWidgetRendererTrait;

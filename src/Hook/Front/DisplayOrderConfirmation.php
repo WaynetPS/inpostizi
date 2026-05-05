@@ -9,6 +9,10 @@ use izi\prestashop\Hook\Exception\InvalidHookParamException;
 use izi\prestashop\Hook\HookInterface;
 use izi\prestashop\Repository\BasketSessionRepositoryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class DisplayOrderConfirmation implements HookInterface
 {
     use ThankYouWidgetRendererTrait;

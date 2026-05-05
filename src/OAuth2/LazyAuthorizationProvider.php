@@ -9,6 +9,10 @@ use izi\prestashop\OAuth2\Token\AccessTokenInterface;
 use izi\prestashop\OAuth2\Token\AccessTokenRepositoryInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class LazyAuthorizationProvider implements AuthorizationProviderInterface
 {
     /**

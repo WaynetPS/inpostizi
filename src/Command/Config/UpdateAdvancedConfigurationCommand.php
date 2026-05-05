@@ -7,6 +7,10 @@ namespace izi\prestashop\Command\Config;
 use izi\prestashop\Configuration\AdvancedConfigurationInterface;
 use izi\prestashop\Handler\Config\UpdateAdvancedConfigurationHandler;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @see UpdateAdvancedConfigurationHandler
  */

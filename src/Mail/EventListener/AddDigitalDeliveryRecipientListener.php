@@ -8,6 +8,10 @@ use izi\prestashop\Mail\Event\SendEmailEvent;
 use izi\prestashop\Repository\OrderDataRepositoryInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class AddDigitalDeliveryRecipientListener implements EventSubscriberInterface
 {
     /**

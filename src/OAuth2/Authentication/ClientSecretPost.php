@@ -6,6 +6,10 @@ namespace izi\prestashop\OAuth2\Authentication;
 
 use Psr\Http\Message\RequestInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class ClientSecretPost implements AuthenticationMethodInterface
 {
     public const IDENTIFIER = 'client_secret_post';

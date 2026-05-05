@@ -11,6 +11,10 @@ use PhpParser\ParserFactory;
 use Symfony\Component\PropertyInfo\PropertyTypeExtractorInterface;
 use Symfony\Component\PropertyInfo\Type;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class PropertyDocBlockTypeExtractor implements PropertyTypeExtractorInterface
 {
     /**

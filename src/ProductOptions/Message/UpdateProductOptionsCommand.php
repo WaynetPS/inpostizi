@@ -8,6 +8,10 @@ use izi\prestashop\Product\Image\ImageGalleryType;
 use izi\prestashop\ProductOptions\MessageHandler\UpdateProductOptionsHandler;
 use izi\prestashop\ProductOptions\ProductOptions;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @see UpdateProductOptionsHandler
  */

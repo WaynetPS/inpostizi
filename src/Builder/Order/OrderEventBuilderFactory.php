@@ -7,6 +7,10 @@ namespace izi\prestashop\Builder\Order;
 use izi\prestashop\ObjectModel\Repository\ObjectRepositoryInterface;
 use Psr\Clock\ClockInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class OrderEventBuilderFactory implements OrderEventBuilderFactoryInterface
 {
     /**

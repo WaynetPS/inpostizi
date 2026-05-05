@@ -6,6 +6,10 @@ namespace izi\prestashop\Configuration\Initializer;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 final class AnnotationsConfigInitializer implements ConfigurationInitializerInterface
 {
     /**

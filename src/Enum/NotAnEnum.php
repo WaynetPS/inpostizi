@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace izi\prestashop\Enum;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * When modeling as an enum was a mistake...
  *

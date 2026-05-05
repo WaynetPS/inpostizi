@@ -20,6 +20,10 @@ use izi\prestashop\Shipping\CartWeight\CartWeightDeliveryStrategyInterface;
 use izi\prestashop\Shipping\ProductDimensions\ProductDimensionsDeliveryStrategyInterface;
 use izi\prestashop\Shipping\ProductRestriction\ProductRestrictionDeliveryInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 /**
  * @todo: refactor
  */

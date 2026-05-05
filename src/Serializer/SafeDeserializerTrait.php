@@ -7,6 +7,10 @@ namespace izi\prestashop\Serializer;
 use Symfony\Component\Serializer\Exception\ExceptionInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 trait SafeDeserializerTrait
 {
     /**
