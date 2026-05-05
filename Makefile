@@ -7,6 +7,18 @@ build-back:
 build-back-prod:
 	docker-compose run --rm php sh -c "composer install --no-dev -o"
 
+autoindex:
+	docker-compose run --rm php sh -c "vendor/bin/autoindex --exclude=_admin_dev,_assets,_dev,tests,vendor"
+	cp src/index.php .
+
+header-stamp:
+	docker-compose run --rm php sh -c "vendor/bin/header-stamp --license=_assets/license.txt --exclude=_admin_dev,_dev,tests,vendor --extensions=php,js,css,scss,tpl,html.twig,vue --header-discrimination-string=InPost"
+
+cs-fix:
+	docker-compose run --rm php sh -c "vendor/bin/php-cs-fixer fix"
+
+update-headers: build-back autoindex header-stamp cs-fix
+
 build-zip:
 	rm -rf inpostizi.zip
 	cp -Ra $(PWD) /tmp/inpostizi
@@ -30,4 +42,4 @@ build-zip:
 rm-uat-files:
 	zip -d inpostizi.zip "inpostizi/src/Environment/UatEnvironment.php"
 
-build-zip-prod: build-back-prod build-zip rm-uat-files
+build-zip-prod: update-headers build-back-prod build-zip rm-uat-files

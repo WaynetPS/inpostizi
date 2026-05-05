@@ -39,6 +39,8 @@
     "require-dev": {
         "prestashop/php-dev-tools": "^5.0",
         "friendsofphp/php-cs-fixer": "^3.4",
-        "phpstan/phpstan": "^1.12"
+        "phpstan/phpstan": "^1.12",
+        "prestashop/autoindex": "^2.1",
+        "prestashop/header-stamp": "^3.1"
     }
 }

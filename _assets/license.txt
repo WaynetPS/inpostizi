@@ -1,0 +1,9 @@
+/**
+ * Copyright since 2023 InPost S.A.
+ *
+ * For the full license information, please view the LICENSE file bundled with the module.
+ *
+ * @author InPost S.A.
+ * @copyright since 2023 InPost S.A.
+ * @license MIT
+ */
