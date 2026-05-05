@@ -7,6 +7,7 @@ namespace izi\prestashop\PromoCode;
 use izi\prestashop\PromoCode\Exception\CouldNotAddPromoCodeException;
 use izi\prestashop\PromoCode\Exception\CouldNotRemovePromoCodeException;
 use izi\prestashop\PromoCode\Exception\InvalidPromoCodeException;
+use izi\prestashop\PromoCode\Exception\PromoCodeExceptionInterface;
 
 if (!defined('_PS_VERSION_')) {
     exit;
@@ -24,11 +25,13 @@ interface PromoCodeManagerInterface
      *
      * @throws InvalidPromoCodeException
      * @throws CouldNotAddPromoCodeException
+     * @throws PromoCodeExceptionInterface
      */
     public function addPromoCode(\Cart $cart, string $code);
 
     /**
      * @throws CouldNotRemovePromoCodeException
+     * @throws PromoCodeExceptionInterface
      */
     public function removePromoCode(\Cart $cart, PromoCodeInterface $promoCode);
 }

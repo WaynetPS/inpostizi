@@ -92,12 +92,12 @@ abstract class AbstractBasketBuilder implements BasketBuilderInterface
     private $availablePromotionsProvider;
 
     /**
-     * @var AttributeListParser
+     * @var AttributeListParser|null
      */
     private $attributeListParser;
 
     /**
-     * @var ImageUrlsProviderInterface
+     * @var ImageUrlsProviderInterface|null
      */
     private $imageProvider;
 
@@ -127,7 +127,7 @@ abstract class AbstractBasketBuilder implements BasketBuilderInterface
     private $availableDeliveryOptions;
 
     /**
-     * @var Summary
+     * @var Summary|null
      */
     private $cartSummary;
 
@@ -137,7 +137,7 @@ abstract class AbstractBasketBuilder implements BasketBuilderInterface
     private $shopId;
 
     /**
-     * @var Price
+     * @var Price|null
      */
     private $promoPrice;
 
@@ -838,9 +838,9 @@ abstract class AbstractBasketBuilder implements BasketBuilderInterface
     }
 
     /**
-     * @return DeliveryRelatedProducts[]|null
+     * @return DeliveryRelatedProducts[]
      */
-    private function getDeliveryRelatedProducts(\Product $product, Price $price, Quantity $quantity): ?array
+    private function getDeliveryRelatedProducts(\Product $product, Price $price, Quantity $quantity): array
     {
         $productDeliveryDetails = [];
 

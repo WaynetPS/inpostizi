@@ -355,6 +355,7 @@ class InpostIziBackendModuleFrontController extends ModuleFrontController
 
     private function resolveControllerArgument(ReflectionParameter $param, Request $request, array $pathParams)
     {
+        /** @var \ReflectionNamedType|null $type */
         $type = $param->getType();
 
         if (null !== $type && Request::class === $type->getName()) {

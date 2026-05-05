@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace izi\prestashop\MerchantApi\Model\Product\Response;
 
-use izi\prestashop\Common\HotProduct\Product;
+use izi\prestashop\Common\HotProduct\IdentifiableProduct;
 
 if (!defined('_PS_VERSION_')) {
     exit;
@@ -13,7 +13,7 @@ if (!defined('_PS_VERSION_')) {
 final class Products implements \JsonSerializable
 {
     /**
-     * @var Product[]
+     * @var IdentifiableProduct[]
      */
     private $content;
 
@@ -33,7 +33,7 @@ final class Products implements \JsonSerializable
     private $page_size;
 
     /**
-     * @param Product[] $content
+     * @param IdentifiableProduct[] $content
      */
     public function __construct(array $content, ?int $total_items = null, ?int $page_index = null, ?int $page_size = null)
     {
@@ -44,7 +44,7 @@ final class Products implements \JsonSerializable
     }
 
     /**
-     * @return Product[]
+     * @return IdentifiableProduct[]
      */
     public function getItems(): array
     {

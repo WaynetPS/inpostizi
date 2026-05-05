@@ -4,6 +4,7 @@ namespace izi\prestashop\Product\Price;
 
 use izi\prestashop\Builder\PriceFactory;
 use izi\prestashop\Common\Price;
+use x13pricehistory\Providers\BatchLowestPriceProvider;
 
 if (!defined('_PS_VERSION_')) {
     exit;
@@ -23,16 +24,6 @@ if (!defined('_PS_VERSION_')) {
  *     lowest_price_amount: float,
  *     product_price: string,
  *     real_discount_value: string,
- * }
- * @phpstan-type BatchLowestPriceProvider object{
- *     getPricesForProductList: callable(
- *         ProductId[] $productIds,
- *         int|null $shopId,
- *         int|null $currencyId,
- *         int|null $countryId,
- *         int|null $customerGroupId,
- *         bool $useTax,
- *     ): array<int, array<int, PriceInfo>>
  * }
  */
 final class X13PriceHistoryLowestPriceProvider implements BatchLowestPriceProviderInterface
@@ -56,7 +47,7 @@ final class X13PriceHistoryLowestPriceProvider implements BatchLowestPriceProvid
     }
 
     /**
-     * @param \X13PriceHistory|\Module $module
+     * @param \X13PriceHistory $module
      */
     public static function create(\Module $module): ?self
     {
@@ -64,7 +55,7 @@ final class X13PriceHistoryLowestPriceProvider implements BatchLowestPriceProvid
             return null;
         }
 
-        /** @var \x13pricehistory\Providers\BatchLowestPriceProvider $priceProvider */
+        /** @var BatchLowestPriceProvider $priceProvider */
         $priceProvider = $module->batchLowestPriceProvider;
 
         if (!\is_callable([$priceProvider, 'getPricesForProductList'])) {

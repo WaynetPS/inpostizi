@@ -43,12 +43,12 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
 class InPostIzi extends PaymentModule implements WidgetInterface
 {
     /**
-     * @var RequestStack
+     * @var RequestStack|null
      */
     private $requestStack;
 
     /**
-     * @var WidgetInterface
+     * @var WidgetInterface|null
      */
     private $widget;
 
@@ -81,7 +81,10 @@ class InPostIzi extends PaymentModule implements WidgetInterface
      */
     public static function getInstance(): Module
     {
-        return self::getInstanceByName('inpostizi');
+        /** @var self $module */
+        $module = self::getInstanceByName('inpostizi');
+
+        return $module;
     }
 
     /**
@@ -265,7 +268,7 @@ class InPostIzi extends PaymentModule implements WidgetInterface
     }
 
     /**
-     * @template T
+     * @template T of object
      *
      * @param string|class-string<T> $serviceName
      *
@@ -278,6 +281,9 @@ class InPostIzi extends PaymentModule implements WidgetInterface
         return $this->getContainer()->get($serviceName);
     }
 
+    /**
+     * @throws ContainerNotFoundException
+     */
     public function getContainer(): ContainerInterface
     {
         if (Tools::version_compare(_PS_VERSION_, '1.7.7')) {

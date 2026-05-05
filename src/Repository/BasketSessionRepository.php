@@ -130,6 +130,10 @@ final class BasketSessionRepository implements BasketSessionRepositoryInterface,
 
     public function refresh(BasketSessionInterface $session): void
     {
+        if (!$session instanceof BasketSession) {
+            throw new \InvalidArgumentException(\sprintf('Expected an instance of %s, %s given', BasketSession::class, \get_class($session)));
+        }
+
         $session->unbind();
         $model = $session->getModel();
         $this->manager->refresh($model);
@@ -168,7 +172,7 @@ final class BasketSessionRepository implements BasketSessionRepositoryInterface,
         $this->doPersist($model);
     }
 
-    private function createExistingSession(InPostIziBasketSession $model): BasketSessionInterface
+    private function createExistingSession(InPostIziBasketSession $model): BasketSession
     {
         $cart = new CartProxy((int) $model->session_id, $this->manager);
         $session = BasketSession::existing($model, $cart, $this->serializer);

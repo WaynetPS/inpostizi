@@ -52,7 +52,7 @@ if (!defined('_PS_VERSION_')) {
 class PrestashopOrder
 {
     /**
-     * @var ImageUrlsProvider
+     * @var ImageUrlsProviderInterface|null
      */
     private $imageProvider;
 
@@ -73,7 +73,7 @@ class PrestashopOrder
     private $orderData;
 
     /**
-     * @var bool
+     * @var bool|null
      */
     private $freeShipping;
 
@@ -83,12 +83,12 @@ class PrestashopOrder
     private $addressDataMapper;
 
     /**
-     * @var AttributeListParser
+     * @var AttributeListParser|null
      */
     private $attributeListParser;
 
     /**
-     * @var BasketAnalyticsInterface
+     * @var BasketAnalyticsInterface|null
      */
     private $basketAnalytics;
 
@@ -99,7 +99,7 @@ class PrestashopOrder
         $this->orderData = $orderData;
         $this->basketAnalytics = $basketAnalytics;
 
-        $this->module = \Module::getInstanceByName('inpostizi');
+        $this->module = \InPostIzi::getInstance();
 
         $this->deliveryDetails = new \Address((int) $this->order->id_address_delivery);
         $this->customer = $this->order->getCustomer();

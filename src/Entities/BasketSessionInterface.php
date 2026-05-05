@@ -14,6 +14,9 @@ if (!defined('_PS_VERSION_')) {
 
 /**
  * @template T of BasketInterface
+ *
+ * @method int|null getShopId()
+ * @method setShopId(int $shopId)
  */
 interface BasketSessionInterface
 {

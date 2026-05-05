@@ -286,6 +286,7 @@ final class HotProductController extends AbstractConfigurationController
         $qb = $repository->createSearchQueryBuilder($query, (int) $this->context->language->id, (int) $this->context->shop->id);
         $countQb = clone $qb;
 
+        /** @var \Product[] $results */
         $results = $qb
             ->limit(10, ($page - 1) * 10)
             ->build()

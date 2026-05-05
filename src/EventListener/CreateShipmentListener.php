@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace izi\prestashop\EventListener;
 
 use izi\prestashop\Event\CreateShipmentRequestEvent;
@@ -49,7 +51,7 @@ final class CreateShipmentListener implements EventSubscriberInterface
             return;
         }
 
-        if (0 >= $orderId = (int) $event->getRequest()->get('id_order')) {
+        if (0 >= $orderId = (string) $event->getRequest()->get('id_order')) {
             return;
         }
 

@@ -32,7 +32,7 @@ class Connection implements LoggerAwareInterface
     private $debug;
 
     /**
-     * @var \Closure(): bool
+     * @var (\Closure(): bool)|null
      */
     private $cacheChecker;
 

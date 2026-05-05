@@ -31,6 +31,7 @@ final class DateTimeImmutableToDateTimeTransformer implements DataTransformerInt
         }
 
         if (\PHP_VERSION_ID >= 70300) {
+            /* @phpstan-ignore staticMethod.notFound */
             return \DateTime::createFromImmutable($value);
         }
 

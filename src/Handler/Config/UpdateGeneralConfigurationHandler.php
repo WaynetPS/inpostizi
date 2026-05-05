@@ -12,7 +12,6 @@ use izi\prestashop\Configuration\GeneralConfiguration;
 use izi\prestashop\Configuration\GeneralConfigurationInterface;
 use izi\prestashop\Configuration\OrdersConfiguration;
 use izi\prestashop\Configuration\OrdersConfigurationInterface;
-use izi\prestashop\Configuration\PersistentConfigurationInterface;
 use izi\prestashop\Configuration\ProductConfiguration;
 use izi\prestashop\Configuration\ProductConfigurationInterface;
 use izi\prestashop\Handler\CommandHandlerTrait;
@@ -26,22 +25,22 @@ final class UpdateGeneralConfigurationHandler implements UpdateGeneralConfigurat
     use CommandHandlerTrait;
 
     /**
-     * @var PersistentConfigurationInterface<ApiConfigurationInterface>
+     * @var ApiConfiguration
      */
     private $apiConfiguration;
 
     /**
-     * @var PersistentConfigurationInterface<OrdersConfigurationInterface>
+     * @var OrdersConfiguration
      */
     private $ordersConfiguration;
 
     /**
-     * @var PersistentConfigurationInterface<GeneralConfigurationInterface>
+     * @var GeneralConfiguration
      */
     private $generalConfiguration;
 
     /**
-     * @var PersistentConfigurationInterface<ProductConfigurationInterface>
+     * @var ProductConfiguration
      */
     private $productConfiguration;
 

@@ -23,34 +23,9 @@ final class GetProductWidgetHandler implements GetProductWidgetHandlerInterface
     use ProductWidgetRendererTrait;
 
     /**
-     * @var GuiConfigurationInterface
-     */
-    private $configuration;
-
-    /**
-     * @var GeneralConfigurationInterface
-     */
-    private $generalConfiguration;
-
-    /**
-     * @var WidgetInterface
-     */
-    private $module;
-
-    /**
-     * @var \Context
-     */
-    private $context;
-
-    /**
      * @var ProductRepository
      */
     private $productRepository;
-
-    /**
-     * @var BasketSessionRepositoryInterface
-     */
-    private $basketSessionRepository;
 
     public function __construct(
         GuiConfigurationInterface $configuration,

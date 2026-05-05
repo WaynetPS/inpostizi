@@ -43,7 +43,7 @@ final class ObjectModelChoiceLoader implements ChoiceLoaderInterface
     private $shopId;
 
     /**
-     * @var T[]
+     * @var T[]|null
      */
     private $choices;
 

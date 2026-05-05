@@ -81,7 +81,7 @@ final class UpdateHotProductsListener implements EventSubscriberInterface
     private $validator;
 
     /**
-     * @var array<int, HotProduct[]> hot products by product ID
+     * @var array<int, HotProduct[]>|null hot products by product ID
      */
     private $productsMap;
 

@@ -20,6 +20,8 @@ trait CommandHandlerTrait
             throw new \LogicException(\sprintf('Cannot determine handled command class for %s.', static::class));
         }
 
+        \assert($commandClass instanceof \ReflectionNamedType);
+
         return $commandClass->getName();
     }
 }

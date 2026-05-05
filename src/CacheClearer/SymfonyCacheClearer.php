@@ -31,7 +31,7 @@ final class SymfonyCacheClearer implements CacheClearerInterface
     private $registered = false;
 
     /**
-     * @var self
+     * @var self|null
      */
     private static $instance;
 
@@ -96,6 +96,7 @@ final class SymfonyCacheClearer implements CacheClearerInterface
 
         if (\Tools::version_compare(_PS_VERSION_, '9.0.0') || null === SymfonyContainer::getInstance()) {
             register_shutdown_function(function () {
+                /* @phpstan-ignore identical.alwaysFalse */
                 $this->removeCacheDirectory('prod' === _PS_ENV_ ? 'dev' : 'prod');
             });
         }

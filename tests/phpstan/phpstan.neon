@@ -15,8 +15,12 @@ parameters:
   level: 5
   treatPhpDocTypesAsCertain: false
   scanDirectories:
-    - ../../../inpostshipping/classes
     - fixtures
+  ignoreErrors:
+    - '#^Property [a-zA-Z]+Core::\$[a-zA-Z_]+ \(.+\) on left side of \?\? is not nullable\.$#' # ObjectModel properties may not be set
+    - '#^Property [a-zA-Z]+Core::\$[a-zA-Z_]+ \(.+\) in isset\(\) is not nullable\.$#' # ObjectModel properties may not be set
+    - '#^Parameter \#1 \$amount_paid of method OrderCore::addOrderPayment\(\) expects string, float given\.$#'
+    - '#^Method Symfony\\Contracts\\EventDispatcher\\EventDispatcherInterface::dispatch\(\) invoked with 2 parameters, 1 required\.$#'
 
 services:
   -

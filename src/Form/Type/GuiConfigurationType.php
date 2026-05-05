@@ -50,7 +50,9 @@ final class GuiConfigurationType extends AbstractType
         $builder
             ->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
                 /** @var GuiConfigurationInterface|null $data */
-                if (null === $data = $event->getData()) {
+                $data = $event->getData();
+
+                if (null === $data) {
                     return;
                 }
 

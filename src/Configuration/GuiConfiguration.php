@@ -37,6 +37,10 @@ final class GuiConfiguration implements GuiConfigurationInterface, PersistentCon
 {
     use SafeDeserializerTrait;
 
+    private const WIDGET_DISPLAY_KEY_PATTERN = 'INPOST_PAY_SHOW_{BINDING_PLACE}_WIDGET';
+    private const WIDGET_CONFIG_KEY_PATTERN = 'INPOST_PAY_{BINDING_PLACE}_WIDGET_CONFIG';
+    private const HTML_STYLES_KEY_PATTERN = 'INPOST_PAY_{BINDING_PLACE}_HTML_STYLES';
+
     private const BASKET_SUMMARY_WIDGET_DISPLAY = 'INPOST_PAY_show_button_cart';
     private const BASKET_SUMMARY_WIDGET_CONFIG = 'INPOST_PAY_CART_WIDGET_CONFIG';
     private const BASKET_SUMMARY_HTML_STYLES = 'INPOST_PAY_CART_HTML_STYLES';
@@ -47,24 +51,8 @@ final class GuiConfiguration implements GuiConfigurationInterface, PersistentCon
     private const PRODUCT_PAGE_RESTRICTIONS = 'INPOST_PAY_PRODUCT_PAGE_RESTRICTIONS';
     private const PRODUCT_RESTRICTED_ACTION = 'INPOST_PAY_PRODUCT_RESTRICTED_ACTION';
 
-    private const LOGIN_PAGE_WIDGET_DISPLAY = 'INPOST_PAY_SHOW_LOGIN_PAGE_WIDGET';
-    private const LOGIN_PAGE_WIDGET_CONFIG = 'INPOST_PAY_LOGIN_PAGE_WIDGET_CONFIG';
-    private const LOGIN_PAGE_HTML_STYLES = 'INPOST_PAY_LOGIN_PAGE_HTML_STYLES';
-
-    private const REGISTERFORM_PAGE_WIDGET_DISPLAY = 'INPOST_PAY_SHOW_REGISTERFORM_PAGE_WIDGET';
-    private const REGISTERFORM_PAGE_WIDGET_CONFIG = 'INPOST_PAY_REGISTERFORM_PAGE_WIDGET_CONFIG';
-    private const REGISTERFORM_PAGE_HTML_STYLES = 'INPOST_PAY_REGISTERFORM_PAGE_HTML_STYLES';
-
-    private const CHECKOUT_PAGE_WIDGET_DISPLAY = 'INPOST_PAY_SHOW_CHECKOUT_PAGE_WIDGET';
-    private const CHECKOUT_PAGE_WIDGET_CONFIG = 'INPOST_PAY_CHECKOUT_PAGE_WIDGET_CONFIG';
-    private const CHECKOUT_PAGE_HTML_STYLES = 'INPOST_PAY_CHECKOUT_PAGE_HTML_STYLES';
-
-    private const MINICART_PAGE_WIDGET_DISPLAY = 'INPOST_PAY_SHOW_MINICART_PAGE_WIDGET';
-    private const MINICART_PAGE_WIDGET_CONFIG = 'INPOST_PAY_MINICART_PAGE_WIDGET_CONFIG';
-    private const MINICART_PAGE_HTML_STYLES = 'INPOST_PAY_MINICART_PAGE_HTML_STYLES';
-
     /**
-     * @var ConfigurationInterface
+     * @var ShopAwareConfigurationInterface
      */
     private $configuration;
 
@@ -89,10 +77,13 @@ final class GuiConfiguration implements GuiConfigurationInterface, PersistentCon
     private $productValidationConstraints = [];
 
     /**
-     * @var BindingPlace[]
+     * @var BindingPlace[]|null
      */
     private static $supportedBindingPlaces;
 
+    /**
+     * @param ShopAwareConfigurationInterface $configuration
+     */
     public function __construct(ConfigurationInterface $configuration, SerializerInterface $serializer, ContainerInterface $container)
     {
         $this->configuration = $configuration;
@@ -127,9 +118,6 @@ final class GuiConfiguration implements GuiConfigurationInterface, PersistentCon
         return \array_slice(self::getSupportedBindingPlaces(), 0, -1); // all supported except "ORDER_CREATE"
     }
 
-    /**
-     * @return WidgetDisplayConfigurationInterface<WidgetConfiguration>
-     */
     public function getDisplayConfiguration(BindingPlace $bindingPlace): WidgetDisplayConfigurationInterface
     {
         if (!$bindingPlace->canDisplayBindingWidget()) {
@@ -142,7 +130,9 @@ final class GuiConfiguration implements GuiConfigurationInterface, PersistentCon
 
         if (BindingPlace::OrderCreate() === $bindingPlace) {
             $configuration = clone $this->getDisplayConfigurationByBindingPlace(BindingPlace::BasketSummary());
-            $widgetConfiguration = $configuration->getWidgetConfiguration()->withBindingPlace(BindingPlace::OrderCreate());
+            /** @var WidgetConfiguration $widgetConfiguration */
+            $widgetConfiguration = $configuration->getWidgetConfiguration();
+            $widgetConfiguration = $widgetConfiguration->withBindingPlace(BindingPlace::OrderCreate());
 
             return $configuration->setWidgetConfiguration($widgetConfiguration);
         }
@@ -289,26 +279,38 @@ final class GuiConfiguration implements GuiConfigurationInterface, PersistentCon
 
     private function getHtmlStyleConfigKey(BindingPlace $bindingPlace): string
     {
-        $constantName = $bindingPlace->value . '_HTML_STYLES';
-        $classNamespace = self::class;
-
-        return \constant($classNamespace . '::' . $constantName);
+        switch ($bindingPlace) {
+            case BindingPlace::BasketSummary():
+                return self::BASKET_SUMMARY_HTML_STYLES;
+            case BindingPlace::ProductCard():
+                    return self::PRODUCT_CARD_HTML_STYLES;
+            default:
+                return strtr(self::HTML_STYLES_KEY_PATTERN, ['{BINDING_PLACE}' => $bindingPlace->value]);
+        }
     }
 
     private function getDisplayWidgetConfigKey(BindingPlace $bindingPlace): string
     {
-        $constantName = $bindingPlace->value . '_WIDGET_DISPLAY';
-        $classNamespace = self::class;
-
-        return \constant($classNamespace . '::' . $constantName);
+        switch ($bindingPlace) {
+            case BindingPlace::BasketSummary():
+                return self::BASKET_SUMMARY_WIDGET_DISPLAY;
+            case BindingPlace::ProductCard():
+                return self::PRODUCT_CARD_WIDGET_DISPLAY;
+            default:
+                return strtr(self::WIDGET_DISPLAY_KEY_PATTERN, ['{BINDING_PLACE}' => $bindingPlace->value]);
+        }
     }
 
     private function getConfigurationWidgetConfigKey(BindingPlace $bindingPlace): string
     {
-        $constantName = $bindingPlace->value . '_WIDGET_CONFIG';
-        $classNamespace = self::class;
-
-        return \constant($classNamespace . '::' . $constantName);
+        switch ($bindingPlace) {
+            case BindingPlace::BasketSummary():
+                return self::BASKET_SUMMARY_WIDGET_CONFIG;
+            case BindingPlace::ProductCard():
+                return self::PRODUCT_CARD_WIDGET_CONFIG;
+            default:
+                return strtr(self::WIDGET_CONFIG_KEY_PATTERN, ['{BINDING_PLACE}' => $bindingPlace->value]);
+        }
     }
 
     private function setProductRestrictedAction(RestrictedAction $action, ?int $shopId = null): void

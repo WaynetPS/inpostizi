@@ -10,6 +10,7 @@ use izi\prestashop\Hook\Exception\InvalidHookParamException;
 use izi\prestashop\Repository\BasketSessionRepositoryInterface;
 use izi\prestashop\Security\Voter\BindingWidgetVoter;
 use izi\prestashop\Validator\Cart\Bindable;
+use izi\prestashop\View\Widget\WidgetConfigurationInterface;
 use izi\prestashop\View\Widget\WidgetConfigurationResolverInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
@@ -77,7 +78,11 @@ final class WidgetParametersProvider implements WidgetParametersProviderInterfac
             throw InvalidHookParamException::unexpectedType('cart', $cart, \Cart::class);
         }
 
-        $widgetConfiguration = $this->resolver->resolve($parameters);
+        $widgetConfiguration = $parameters['config'] ?? $this->resolver->resolve($parameters);
+
+        if (!$widgetConfiguration instanceof WidgetConfigurationInterface) {
+            throw InvalidHookParamException::unexpectedType('config', $widgetConfiguration, WidgetConfigurationInterface::class . '|null');
+        }
 
         if (!$this->isBindable($cart, $widgetConfiguration->getBindingPlace())) {
             return [];

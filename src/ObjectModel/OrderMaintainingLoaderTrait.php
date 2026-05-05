@@ -20,7 +20,7 @@ trait OrderMaintainingLoaderTrait
      * @template TVal of \ObjectModel
      *
      * @param class-string<TVal> $class
-     * @param array<TKey, int> $ids list of object identifiers
+     * @param array<TKey, int|numeric-string> $ids list of object identifiers
      *
      * @return array<TKey, TVal> objects indexed by corresponding keys from the $ids array and in the same relative order
      */

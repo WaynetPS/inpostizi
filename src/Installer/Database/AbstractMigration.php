@@ -89,6 +89,7 @@ abstract class AbstractMigration implements MigrationInterface
 
     protected function addForeignKey(string $table, string $foreignTable, array $localColumnNames, array $foreignColumnNames, string $name, array $options = []): void
     {
+        /* @phpstan-ignore notIdentical.alwaysFalse */
         if ('InnoDB' !== _MYSQL_ENGINE_ || !$this->supportsForeignKeys($foreignTable)) {
             return;
         }

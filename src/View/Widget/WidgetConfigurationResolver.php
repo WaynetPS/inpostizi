@@ -25,10 +25,6 @@ final class WidgetConfigurationResolver implements WidgetConfigurationResolverIn
 
     public function resolve(array $options): WidgetConfigurationInterface
     {
-        if (isset($options['config']) && $options['config'] instanceof WidgetConfigurationInterface) {
-            return $options['config'];
-        }
-
         $options = $this
             ->getOptionsResolver()
             ->setDefined(array_keys($options))

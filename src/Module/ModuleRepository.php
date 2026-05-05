@@ -19,10 +19,9 @@ class ModuleRepository
      */
     public function findByName(string $name): ?\Module
     {
-        if (false === $module = \Module::getInstanceByName($name)) {
-            return null;
-        }
+        /** @var \Module|false $module */
+        $module = \Module::getInstanceByName($name);
 
-        return $module;
+        return false === $module ? null : $module;
     }
 }
