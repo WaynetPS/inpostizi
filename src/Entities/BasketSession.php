@@ -79,25 +79,25 @@ final class BasketSession implements SwitchableBasketSessionInterface
     {
         $session = new self($basket, $model);
 
-        $session->confirmationFactory = \Closure::bind(function () use ($serializer) {
-            if (null === $this->model->confirmation_response) {
+        $session->confirmationFactory = static function () use ($session, $serializer) {
+            if (null === $session->model->confirmation_response) {
                 return null;
             }
 
-            $value = base64_decode($this->model->confirmation_response);
+            $value = base64_decode($session->model->confirmation_response);
 
             return $serializer->deserialize($value, BindingConfirmation::class, 'json');
-        }, $session);
+        };
 
-        $session->orderRequestFactory = \Closure::bind(function () use ($serializer) {
-            if (null === $this->model->order_details) {
+        $session->orderRequestFactory = static function () use ($session, $serializer) {
+            if (null === $session->model->order_details) {
                 return null;
             }
 
-            $value = base64_decode($this->model->order_details);
+            $value = base64_decode($session->model->order_details);
 
             return $serializer->deserialize($value, CreateOrderRequest::class, 'json');
-        }, $session);
+        };
 
         return $session;
     }
