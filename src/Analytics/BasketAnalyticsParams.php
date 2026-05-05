@@ -20,7 +20,7 @@ class BasketAnalyticsParams implements BasketAnalyticsInterface
 
     public function __construct()
     {
-        if ([] === $args = func_get_args()) {
+        if ([] === $args = \func_get_args()) {
             return;
         }
 

@@ -39,7 +39,7 @@ final class BasketAnalyticsFactory implements BasketAnalyticsFactoryInterface
     {
         if ($extractors instanceof CookieExtractorInterface) {
             @trigger_error(\sprintf('Passing $gclidExtractor, $fbclidExtractor and $clientIdExtractor as arguments of "%s()" is deprecated since version 3.2, pass extractors with the "getParameterName()" method implemented as an iterable instead.', __METHOD__), \E_USER_DEPRECATED);
-            $args = func_get_args();
+            $args = \func_get_args();
             $this->setExtractorsByName($args);
         } elseif (!is_iterable($extractors)) {
             throw new \InvalidArgumentException(\sprintf('Expected $extractors to be iterable, "%s" given.', get_debug_type($extractors)));

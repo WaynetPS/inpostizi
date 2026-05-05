@@ -216,7 +216,7 @@ class Connection implements LoggerAwareInterface
 
     protected function isCacheEnabled(): bool
     {
-        $this->cacheChecker = $this->cacheChecker ?? \Closure::bind(function() {
+        $this->cacheChecker = $this->cacheChecker ?? \Closure::bind(function () {
             return (bool) $this->is_cache_enabled;
         }, $this->db, \Db::class);
 

@@ -76,7 +76,7 @@ final class GetProductWidgetHandler implements GetProductWidgetHandlerInterface
     public function __invoke(GetProductWidgetCommand $command): ProductWidgetResult
     {
         if (!$this->productExists($command->getProductId())) {
-            throw new \DomainException(sprintf('Product with id: "%s" does not exist', $command->getProductId()));
+            throw new \DomainException(\sprintf('Product with id: "%s" does not exist', $command->getProductId()));
         }
 
         $product = $this->getProduct($command->getProductId(), $command->getProductAttributeId());

@@ -87,7 +87,7 @@ final class ShippingConfiguration implements ShippingConfigurationInterface, Opt
 
     public function isServiceEnabled(string $serviceCode, ?int $shopId = null): bool
     {
-        return !array_key_exists($serviceCode, $this->disabledServiceCodes);
+        return !\array_key_exists($serviceCode, $this->disabledServiceCodes);
     }
 
     public function getDisabledServiceCodes(?int $shopId = null): array
