@@ -12,7 +12,7 @@ trait CommandHandlerTrait
         $method = $class->getMethod('__invoke');
         $parameters = $method->getParameters();
 
-        if ([] === $parameters || null === $commandClass = $parameters[0]->getClass()) {
+        if ([] === $parameters || null === $commandClass = $parameters[0]->getType()) {
             throw new \LogicException(\sprintf('Cannot determine handled command class for %s.', static::class));
         }
 
