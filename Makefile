@@ -7,7 +7,7 @@ build-back:
 build-back-prod:
 	docker-compose run --rm php sh -c "composer install --no-dev -o"
 
-autoindex:
+auto-index:
 	docker-compose run --rm php sh -c "vendor/bin/autoindex --exclude=_admin_dev,_assets,_dev,tests,vendor"
 	cp src/index.php .
 
@@ -17,7 +17,10 @@ header-stamp:
 cs-fix:
 	docker-compose run --rm php sh -c "vendor/bin/php-cs-fixer fix"
 
-update-headers: build-back autoindex header-stamp cs-fix
+cs-fix-dist:
+	docker-compose run --rm php sh -c "INPOST_IZI_DIST_BUILD=1 vendor/bin/php-cs-fixer fix"
+
+update-headers: build-back auto-index header-stamp cs-fix-dist
 
 build-zip:
 	rm -rf inpostizi.zip
