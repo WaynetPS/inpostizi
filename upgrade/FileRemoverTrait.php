@@ -23,7 +23,7 @@ trait FileRemoverTrait
     private $module;
 
     /**
-     * @var Filesystem
+     * @var Filesystem|null
      */
     private $filesystem;
 

@@ -21,7 +21,7 @@ final class ProductController extends AbstractApiController
     {
         $pageIndex = $request->query->get('page_index');
         $pageSize = $request->query->get('page_size');
-        $productIds = $request->query->get('product_ids');
+        $productIds = $request->query->all()['product_ids'] ?? null;
 
         if (null !== $productIds && !\is_array($productIds)) {
             $productIds = explode(',', $productIds);

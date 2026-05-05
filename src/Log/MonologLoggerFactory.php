@@ -101,6 +101,8 @@ final class MonologLoggerFactory implements LoggerFactoryInterface
 
     private function includeStacktraces(HandlerInterface $handler): void
     {
+        \assert(\is_callable([$handler, 'getFormatter']));
+
         $formatter = $handler->getFormatter();
         if ($formatter instanceof LineFormatter || $formatter instanceof JsonFormatter) {
             $formatter->includeStacktraces();
@@ -109,6 +111,8 @@ final class MonologLoggerFactory implements LoggerFactoryInterface
 
     private function processPsrMessages(HandlerInterface $handler, array $options): void
     {
+        \assert(\is_callable([$handler, 'pushProcessor']));
+
         $removeContextFields = $options['remove_used_context_fields'] ?? false;
         $processor = new PsrLogMessageProcessor($options['date_format'] ?? null, $removeContextFields);
 

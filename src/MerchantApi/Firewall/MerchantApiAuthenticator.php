@@ -78,6 +78,9 @@ final class MerchantApiAuthenticator
         ));
     }
 
+    /**
+     * @return \OpenSSLAsymmetricKey|resource
+     */
     private function extractPublicKey(PublicKey $key)
     {
         $publicKey = openssl_pkey_get_public($key->getPemFormatted());
@@ -90,7 +93,7 @@ final class MerchantApiAuthenticator
     }
 
     /**
-     * @param resource $publicKey
+     * @param \OpenSSLAsymmetricKey|resource $publicKey
      */
     private function verifySignature(string $data, string $signature, $publicKey): void
     {

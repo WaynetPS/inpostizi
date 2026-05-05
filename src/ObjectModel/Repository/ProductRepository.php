@@ -87,6 +87,7 @@ class ProductRepository extends ObjectRepository
 
     public function getProductNameByProductId(int $productId, int $languageId, ?int $combinationId = null): ?string
     {
+        /** @var false|string $name */
         $name = \Product::getProductName($productId, $combinationId, $languageId);
 
         return false === $name ? null : $name;

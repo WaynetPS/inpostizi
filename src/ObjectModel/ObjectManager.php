@@ -138,6 +138,7 @@ final class ObjectManager implements ObjectManagerInterface
             throw new \DomainException(\sprintf('%s is not a %s.', $class, \ObjectModel::class));
         }
 
+        /** @var array{table: string, primary: string, multilang?: bool, multilang_shop?: bool, fields: array<string, array>} $metadata */
         $metadata = $class::getDefinition($class);
         $metadata['multishop'] = \Shop::isTableAssociated($metadata['table']);
 

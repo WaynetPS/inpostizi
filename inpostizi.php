@@ -21,6 +21,7 @@ use PrestaShop\PrestaShop\Adapter\ContainerBuilder as PrestaShopContainerBuilder
 use PrestaShop\PrestaShop\Adapter\SymfonyContainer;
 use PrestaShop\PrestaShop\Core\Exception\ContainerNotFoundException as PrestaShopContainerNotFoundException;
 use PrestaShop\PrestaShop\Core\Module\WidgetInterface;
+use PrestaShop\PrestaShop\Core\Payment\PaymentOption;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\DependencyInjection\Container;
@@ -212,6 +213,14 @@ class InPostIzi extends PaymentModule implements WidgetInterface
     }
 
     /**
+     * @return PaymentOption[]
+     */
+    public function hookPaymentOptions(array $parameters): array
+    {
+        return $this->execHook('paymentOptions', $parameters) ?? [];
+    }
+
+    /**
      * Handles hook calls.
      *
      * @return mixed hook result
@@ -219,52 +228,10 @@ class InPostIzi extends PaymentModule implements WidgetInterface
     public function __call(string $methodName, array $arguments)
     {
         $hookName = str_starts_with($methodName, 'hook')
-            ? lcfirst(Tools::substr($methodName, 4))
+            ? lcfirst(substr($methodName, 4))
             : $methodName;
 
-        try {
-            $parameters = $this->normalizeHookParameters($arguments[0] ?? []);
-
-            return $this->get(HookExecutorInterface::class)->execute($hookName, $parameters);
-        } catch (ModuleErrorInterface $e) {
-            throw $e;
-        } catch (InvalidHookParamException $e) {
-            $this->getLogger()->debug('Invalid params passed to hook "{hookName}".', [
-                'hookName' => $hookName,
-                'exception' => $e,
-            ]);
-
-            if (_PS_MODE_DEV_) {
-                throw $e;
-            }
-
-            return null;
-        } catch (HookNotImplementedException $e) {
-            $this->getLogger()->warning('Hook "{hookName}" is not implemented.', [
-                'hookName' => $hookName,
-            ]);
-
-            return null;
-        } catch (Throwable $e) {
-            if ($this->isContainerCacheRelated($e)) {
-                $this->getLogger()->error('Error executing hook "{hookName}": container cache is stale.', [
-                    'hookName' => $hookName,
-                ]);
-
-                return null;
-            }
-
-            $this->getLogger()->critical('Error executing hook "{hookName}".', [
-                'hookName' => $hookName,
-                'exception' => $e,
-            ]);
-
-            if (_PS_MODE_DEV_ && $this->isDebugEnabled()) {
-                throw $e;
-            }
-
-            return null;
-        }
+        return $this->execHook($hookName, $arguments[0] ?? []);
     }
 
     /**
@@ -577,5 +544,52 @@ class InPostIzi extends PaymentModule implements WidgetInterface
         }
 
         $translator->getCatalogue()->addCatalogue($catalogue);
+    }
+
+    private function execHook(string $name, array $parameters)
+    {
+        try {
+            $parameters = $this->normalizeHookParameters($parameters);
+
+            return $this->get(HookExecutorInterface::class)->execute($name, $parameters);
+        } catch (ModuleErrorInterface $e) {
+            throw $e;
+        } catch (InvalidHookParamException $e) {
+            $this->getLogger()->debug('Invalid params passed to hook "{hookName}".', [
+                'hookName' => $name,
+                'exception' => $e,
+            ]);
+
+            if (_PS_MODE_DEV_) {
+                throw $e;
+            }
+
+            return null;
+        } catch (HookNotImplementedException $e) {
+            $this->getLogger()->warning('Hook "{hookName}" is not implemented.', [
+                'hookName' => $name,
+            ]);
+
+            return null;
+        } catch (Throwable $e) {
+            if ($this->isContainerCacheRelated($e)) {
+                $this->getLogger()->error('Error executing hook "{hookName}": container cache is stale.', [
+                    'hookName' => $name,
+                ]);
+
+                return null;
+            }
+
+            $this->getLogger()->critical('Error executing hook "{hookName}".', [
+                'hookName' => $name,
+                'exception' => $e,
+            ]);
+
+            if (_PS_MODE_DEV_ && $this->isDebugEnabled()) {
+                throw $e;
+            }
+
+            return null;
+        }
     }
 }

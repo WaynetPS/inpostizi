@@ -42,7 +42,4 @@ build-zip:
 	zip -r inpostizi.zip inpostizi
 	rm -rf $(PWD)/inpostizi
 
-rm-uat-files:
-	zip -d inpostizi.zip "inpostizi/src/Environment/UatEnvironment.php"
-
-build-zip-prod: update-headers build-back-prod build-zip rm-uat-files
+build-zip-prod: update-headers build-back-prod build-zip

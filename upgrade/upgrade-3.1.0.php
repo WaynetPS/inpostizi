@@ -16,7 +16,7 @@ class InPostIziUpdater_3_1_0
      * No BC break: previously marked as internal.
      */
     private const CLASSES_TO_REMOVE = [
-        izi\prestashop\MerchantApi\Model\Basket\Response\BasketTrait::class,
+        'izi\prestashop\MerchantApi\Model\Basket\Response\BasketTrait',
     ];
 
     private const STALE_ASSETS = [

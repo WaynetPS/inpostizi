@@ -335,6 +335,7 @@ abstract class AbstractBasketBuilder implements BasketBuilderInterface
         $customizationId = \array_key_exists('id_customization', $product) ? (int) $product['id_customization'] : 0;
         $shopId = \array_key_exists('id_shop', $product) ? (int) $product['id_shop'] : null;
 
+        /** @var int|numeric-string|array{id_category_default: int|numeric-string} $category */
         $category = $model->id_category_default ?: $model->getDefaultCategory();
         $description = DescriptionFormatter::formatDescription($model);
         $link = $this->contextManager->getContext()->link->getProductLink($model, null, null, null, $this->cart->id_lang, $shopId, $combinationId);
@@ -773,7 +774,7 @@ abstract class AbstractBasketBuilder implements BasketBuilderInterface
         foreach ($cartProductsById as $productId => $cartProduct) {
             $product = new \Product($productId, false, $this->cart->id_lang, $cartProduct['id_shop']);
 
-            if (false === $accessories = $product->getAccessories($this->cart->id_lang)) {
+            if (!$accessories = $product->getAccessories($this->cart->id_lang)) {
                 continue;
             }
 

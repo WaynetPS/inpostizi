@@ -60,7 +60,7 @@ final class HotProductDataMapper implements HotProductDataMapperInterface
     private $context;
 
     /**
-     * @var array<int, \Language> Polish language by shop ID
+     * @var array<int, \Language|null> Polish language by shop ID
      */
     private $languages = [];
 

@@ -391,7 +391,10 @@ final class GuiConfiguration implements GuiConfigurationInterface, PersistentCon
 
     private function getContextShopId(): ?int
     {
-        if (null === $shopId = $this->getContext()->getContextShopID()) {
+        /** @var int|numeric-string|null $shopId */
+        $shopId = $this->getContext()->getContextShopID();
+
+        if (null === $shopId) {
             return null;
         }
 

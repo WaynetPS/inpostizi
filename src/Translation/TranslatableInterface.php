@@ -11,13 +11,13 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 
-if (interface_exists(ContractsTranslatableInterface::class)) {
-    interface TranslatableInterface extends ContractsTranslatableInterface
-    {
-    }
-} else {
+if (!interface_exists(ContractsTranslatableInterface::class)) {
     interface TranslatableInterface
     {
         public function trans(TranslatorInterface $translator, ?string $locale = null): string;
+    }
+} else {
+    interface TranslatableInterface extends ContractsTranslatableInterface
+    {
     }
 }

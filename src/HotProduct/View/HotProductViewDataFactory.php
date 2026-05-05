@@ -45,7 +45,7 @@ final class HotProductViewDataFactory
     private $validator;
 
     /**
-     * @var array<int, \Shop> shops by ID
+     * @var array<int, \Shop|null> shops by ID
      */
     private $shopMap = [];
 

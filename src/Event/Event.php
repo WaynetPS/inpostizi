@@ -11,12 +11,12 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 
-if (class_exists(LegacyEvent::class)) {
-    class Event extends LegacyEvent
+if (!class_exists(LegacyEvent::class)) {
+    class Event extends BaseEvent
     {
     }
 } else {
-    class Event extends BaseEvent
+    class Event extends LegacyEvent
     {
     }
 }

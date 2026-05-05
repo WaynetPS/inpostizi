@@ -172,7 +172,7 @@ class InPostIziUpdater_1_5_5
     {
         $weekDay = isset($config['day']) ? WeekDay::tryFrom($config['day'] + 1) : null;
         $time = isset($config['time'])
-            ? DateTimeImmutable::createFromFormat('G', (int) $config['time'])
+            ? DateTimeImmutable::createFromFormat('G', (string) (int) $config['time'])
             : null;
 
         return new TimeOfWeek($weekDay, $time);

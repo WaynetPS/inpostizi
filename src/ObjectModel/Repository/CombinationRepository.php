@@ -13,14 +13,12 @@ if (!defined('_PS_VERSION_')) {
 }
 
 /**
- * @template T of (\ProductAttribute|\Attribute)
- *
  * @extends ObjectRepository<\Combination>
  */
 class CombinationRepository extends ObjectRepository
 {
     /**
-     * @var class-string<T>
+     * @var class-string<\ProductAttribute>
      */
     private $attributeModelClass;
 
@@ -31,7 +29,7 @@ class CombinationRepository extends ObjectRepository
     }
 
     /**
-     * @return class-string<T>
+     * @return class-string<\ProductAttribute>
      *
      * @internal
      */
@@ -41,7 +39,7 @@ class CombinationRepository extends ObjectRepository
     }
 
     /**
-     * @return array<int, non-empty-array<ProductAttribute<T>>> attributes by attribute group ID
+     * @return array<int, non-empty-array<ProductAttribute>> attributes by attribute group ID
      */
     public function getAvailableAttributesByProductId(int $productId, int $languageId): array
     {
@@ -57,7 +55,7 @@ class CombinationRepository extends ObjectRepository
     }
 
     /**
-     * @return ProductAttribute<T>[]
+     * @return ProductAttribute[]
      */
     public function getAttributesByCombinationId(int $combinationId, int $languageId): array
     {
@@ -75,11 +73,11 @@ class CombinationRepository extends ObjectRepository
     }
 
     /**
-     * @return array<int, T> attributes by group ID
+     * @return array<int, \ProductAttribute> attributes by group ID
      */
     public function getSimpleAttributesByCombinationId(int $combinationId, ?int $languageId = null): array
     {
-        /** @var T[] $attributes */
+        /** @var \ProductAttribute[] $attributes */
         $attributes = $this
             ->createAttributesQueryBuilder($languageId)
             ->where('pac.id_product_attribute = ' . $combinationId)
@@ -134,7 +132,7 @@ class CombinationRepository extends ObjectRepository
     }
 
     /**
-     * @return QueryBuilder<T>
+     * @return QueryBuilder<\ProductAttribute>
      */
     private function createAttributesQueryBuilder(?int $languageId = null): QueryBuilder
     {
@@ -145,7 +143,7 @@ class CombinationRepository extends ObjectRepository
     }
 
     /**
-     * @return array<int, non-empty-array<ProductAttribute<T>>> attributes by attribute group ID
+     * @return array<int, non-empty-array<ProductAttribute>> attributes by attribute group ID
      */
     private function hydrateProductAttributes(array $data, int $languageId): array
     {
@@ -156,7 +154,7 @@ class CombinationRepository extends ObjectRepository
         $groups = $result = [];
 
         foreach ($data as $row) {
-            /** @var T $attribute */
+            /** @var \ProductAttribute $attribute */
             $attribute = $this->manager->getHydrator()->hydrate($row, $this->attributeModelClass, null, $languageId);
             $groupId = (int) $attribute->id_attribute_group;
 

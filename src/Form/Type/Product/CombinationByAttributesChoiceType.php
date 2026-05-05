@@ -37,7 +37,7 @@ final class CombinationByAttributesChoiceType extends AbstractType
     private $manager;
 
     /**
-     * @var CombinationRepository
+     * @var CombinationRepository|null
      */
     private $repository;
 
@@ -113,6 +113,9 @@ final class CombinationByAttributesChoiceType extends AbstractType
             ->setAllowedValues('input', ['object', 'id']);
     }
 
+    /**
+     * @param CombinationRepository $repository
+     */
     private function createModelTransformer(ObjectRepositoryInterface $repository, array $options): DataTransformerInterface
     {
         $transformer = new CombinationToAttributeIdsTransformer($repository, $options['product_id']);
@@ -134,6 +137,13 @@ final class CombinationByAttributesChoiceType extends AbstractType
      */
     private function getRepository(): ObjectRepositoryInterface
     {
-        return $this->repository ?? ($this->repository = $this->manager->getRepository(\Combination::class));
+        if (isset($this->repository)) {
+            return $this->repository;
+        }
+
+        /** @var CombinationRepository $repository */
+        $repository = $this->manager->getRepository(\Combination::class);
+
+        return $this->repository = $repository;
     }
 }

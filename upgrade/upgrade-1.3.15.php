@@ -12,7 +12,7 @@ if (!defined('_PS_VERSION_')) {
 function upgrade_module_1_3_15(Module $module)
 {
     foreach (['INPOST_PAY_payment_courier', 'INPOST_PAY_payment_courier_cod'] as $key) {
-        if (!$carrierId = Configuration::get($key)) {
+        if (0 >= $carrierId = (int) Configuration::get($key)) {
             continue;
         }
 

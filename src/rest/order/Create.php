@@ -35,7 +35,6 @@ use izi\prestashop\Shipping\OptionalService\Exception\ServiceUnavailableExceptio
 use izi\prestashop\Shipping\OptionalService\OptionalServiceHandlerInterface;
 use izi\prestashop\Validator\Product\Unrestricted;
 use PrestaShop\PrestaShop\Core\Crypto\Hashing;
-use Symfony\Component\Translation\TranslatorInterface as LegacyTranslatorInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
@@ -98,7 +97,7 @@ class Create
     private $validator;
 
     /**
-     * @var TranslatorInterface|LegacyTranslatorInterface
+     * @var TranslatorInterface
      */
     private $translator;
 

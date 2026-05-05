@@ -29,12 +29,6 @@ final class EnvironmentFactory implements EnvironmentFactoryInterface
                 return new ProductionEnvironment();
             case EnvironmentType::Sandbox():
                 return new SandboxEnvironment();
-            case EnvironmentType::Uat():
-                if (class_exists(UatEnvironment::class)) {
-                    return new UatEnvironment();
-                }
-
-                // no break
             default:
                 throw new \LogicException('Unsupported environment type.');
         }

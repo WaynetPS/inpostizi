@@ -8,13 +8,10 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 
-/**
- * @template T of (\ProductAttribute|\Attribute)
- */
 final class ProductAttribute
 {
     /**
-     * @var T
+     * @var \ProductAttribute
      */
     private $attribute;
 
@@ -24,7 +21,7 @@ final class ProductAttribute
     private $group;
 
     /**
-     * @param T $attribute
+     * @param \ProductAttribute $attribute
      *
      * @internal
      */
@@ -39,7 +36,7 @@ final class ProductAttribute
     }
 
     /**
-     * @return T
+     * @return \ProductAttribute
      */
     public function getAttribute(): \ObjectModel
     {

@@ -67,7 +67,10 @@ final class HotProductController extends AbstractConfigurationController
             return $this->redirectToRoute('admin_inpost_izi_config_general');
         }
 
-        if (null !== $shopId = $this->shopContext->getContextShopID()) {
+        /** @var int|numeric-string|null $shopId */
+        $shopId = $this->shopContext->getContextShopID();
+
+        if (null !== $shopId) {
             $shopId = (int) $shopId;
         }
 
@@ -98,7 +101,10 @@ final class HotProductController extends AbstractConfigurationController
             return $this->redirectToRoute('admin_inpost_izi_config_general');
         }
 
-        if (null !== $shopId = $this->shopContext->getContextShopID()) {
+        /** @var int|numeric-string|null $shopId */
+        $shopId = $this->shopContext->getContextShopID();
+
+        if (null !== $shopId) {
             $shopId = (int) $shopId;
         } else {
             $this->addFlash('warning', $this->translator->trans('You are creating a hot product in a multistore context. Product data associated with the default shop will be sent to the Basket App.', [], 'Modules.Inpostizi.Hotproduct'));
