@@ -36,12 +36,8 @@ final class Version_2_1_0 extends AbstractMigration
 
     private function createHotProductsTable(): void
     {
-        if ($this->tableExists(HotProductRepository::TABLE_NAME)) {
-            return;
-        }
-
         $this->connection->executeStatement('
-            CREATE TABLE `' . _DB_PREFIX_ . HotProductRepository::TABLE_NAME . '` (
+            CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . HotProductRepository::TABLE_NAME . '` (
                 `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
                 `product_id` INT(11) UNSIGNED NOT NULL,
                 `combination_id` INT(11) UNSIGNED,
