@@ -101,10 +101,6 @@ $_MODULE['<{inpostizi}prestashop>ordersconfigurationtype_fd282be0a539046c5c22736
 $_MODULE['<{inpostizi}prestashop>ordersconfigurationtype_32e0295e9c28454d52b4f4f3643b46e7'] = 'Status zamówienia utworzonego przez InPost Pay (płatność za pobraniem)';
 $_MODULE['<{inpostizi}prestashop>ordersconfigurationtype_05a5fcc9d88a553b80b2633aa4556d58'] = 'Status dla zamówienia opłaconego przez InPost Pay';
 $_MODULE['<{inpostizi}prestashop>ordersconfigurationtype_33af8066d3c83110d4bd897f687cedd2'] = 'Statusy zamówień';
-$_MODULE['<{inpostizi}prestashop>ordersconfigurationtype_8cd8b0f7c9d02973566d70ae96bcf976'] = 'Włącz wszystkie dostępne metody płatności';
-$_MODULE['<{inpostizi}prestashop>ordersconfigurationtype_50b5c5b98ff1773e551421f082fed261'] = 'Metody płatności zostały określone na umowie o obsługę bramki płatniczej.';
-$_MODULE['<{inpostizi}prestashop>ordersconfigurationtype_e1bbdbf5c497c484c061c4c2a0359e58'] = 'Płatność przy odbiorze będzie dostępna tylko wtedy, kiedy posiadasz podpisaną umowę z InPost na świadczenie tej usługi w Twoim sklepie.';
-$_MODULE['<{inpostizi}prestashop>ordersconfigurationtype_e8051555e4af6e673fbe93a79a86671f'] = 'Włączone metody płatności';
 $_MODULE['<{inpostizi}prestashop>ordersconfigurationtype_e9adbbd1cd7eff7e1a588c31f79521d5'] = 'POS ID';
 $_MODULE['<{inpostizi}prestashop>ordersconfigurationtype_d3188981fad68a05eec51ac57e69feca'] = 'W przypadku środowiska sandbox skontaktuj się z InPost. W przypadku środowiska produkcyjnego - zaloguj się do InPost i pobierz POS ID.';
 $_MODULE['<{inpostizi}prestashop>ordersconfigurationtype_f13673c7e261fd8d00915c9cb768ad95'] = 'Komentarz zamówienia';

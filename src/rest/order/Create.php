@@ -7,7 +7,6 @@ use izi\prestashop\Common\Customer\InvoiceDetails;
 use izi\prestashop\Common\Customer\LegalForm;
 use izi\prestashop\Common\Delivery\DeliveryType;
 use izi\prestashop\Common\Delivery\ServiceCode;
-use izi\prestashop\Common\PaymentType;
 use izi\prestashop\Common\PhoneNumber;
 use izi\prestashop\Configuration\Adapter\Configuration;
 use izi\prestashop\Configuration\OptionalServicesConfigurationInterface;
@@ -216,8 +215,6 @@ class Create
         }
 
         $paymentType = $request->getOrderDetails()->getPaymentType();
-
-        $this->checkPaymentType($paymentType, $shopId);
 
         $customer = $this->findOrCreateCustomer($cart, $request->getAccountInfo());
         $addresses = $this->findOrCreateAddresses($customer, $request);
@@ -766,21 +763,6 @@ class Create
         }
 
         return (int) $carrier->id;
-    }
-
-    private function checkPaymentType(PaymentType $paymentType, int $shopId): void
-    {
-        $availablePaymentOptions = $this->ordersConfiguration->getAvailablePaymentOptions($shopId);
-
-        if ([] === $availablePaymentOptions) {
-            return;
-        }
-
-        if (in_array($paymentType, $availablePaymentOptions, true)) {
-            return;
-        }
-
-        throw new CannotCreateOrderException($this->module->l('The selected payment method is not available.', self::TRANSLATION_SOURCE));
     }
 
     /**
